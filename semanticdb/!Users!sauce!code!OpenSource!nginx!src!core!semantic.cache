@@ -1,0 +1,362 @@
+;; Object core/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "core/"
+  :tables (list 
+   (semanticdb-table "nginx.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("nginx.h" include (:system-flag t) nil [2 20])
+            ("ngx_config.h" include (:system-flag t) nil [22 45])
+            ("ngx_string.h" include (:system-flag t) nil [46 69])
+            ("ngx_log.h" include (:system-flag t) nil [70 90])
+            ("ngx_alloc.h" include (:system-flag t) nil [91 113])
+            ("ngx_server.h" include (:system-flag t) nil [114 137])
+            ("ngx_connection.h" include (:system-flag t) nil [138 165])
+            ("ngx_listen.h" include (:system-flag t) nil [166 189])
+            ("ngx_options" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [257 266])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [267 285]))                  
+                :type "int")
+                nil [234 286])
+            ("ngx_root" variable
+               (:pointer 1
+                :type "char")
+                nil [295 341])
+            ("ngx_http_init_connection" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [372 383]))                  
+                :type "int")
+                nil [343 384])
+            ("ngx_max_conn" variable (:type "int") nil [387 410])
+            ("ngx_addr" variable (:type ("sockaddr_in" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [411 463])
+            ("ngx_backlog" variable (:type "int") nil [464 484])
+            ("ngx_pool" variable (:type ("ngx_pool_t" type (:type "class") nil nil)) nil [486 508])
+            ("ngx_log" variable (:type ("ngx_log_t" type (:type "class") nil nil)) nil [509 530])
+            ("ngx_server" variable (:type ("ngx_server_t" type (:type "class") nil nil)) nil [531 555])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [567 576])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [577 595]))                  
+                :type "int")
+                nil [558 2891])
+            ("optarg" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [2906 2926])
+            ("ngx_options" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2951 2960])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2961 2979]))                  
+                :type "int")
+                nil [2928 3664]))          
+    :file "nginx.c"
+    :pointmax 3672
+    :fsize 3671
+    :lastmodtime '(20350 64452)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "ngx_alloc.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("ngx_config.h" include (:system-flag t) nil [2 25])
+            ("ngx_errno.h" include (:system-flag t) nil [27 49])
+            ("ngx_log.h" include (:system-flag t) nil [50 70])
+            ("ngx_alloc.h" include (:system-flag t) nil [71 93])
+            ("ngx_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [112 124])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125 140]))                  
+                :type "void")
+                nil [96 331])
+            ("ngx_calloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [350 362])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [363 378]))                  
+                :type "void")
+                nil [333 482])
+            ("ngx_create_pool" function
+               (:pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [512 524])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [525 540]))                  
+                :type ("ngx_pool_t" type (:type "class") nil nil))
+                nil [484 768])
+            ("ngx_destroy_pool" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [792 809]))                  
+                :type "void")
+                nil [770 1072])
+            ("ngx_palloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1091 1108])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1109 1121]))                  
+                :type "void")
+                nil [1074 2586])
+            ("ngx_pcalloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2606 2623])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2624 2636]))                  
+                :type "void")
+                nil [2588 2742]))          
+    :file "ngx_alloc.c"
+    :pointmax 2743
+    :fsize 2742
+    :lastmodtime '(20341 54365)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "nginx.h"
+    :file "nginx.h"
+    :fsize 112
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_config.h"
+    :file "ngx_config.h"
+    :fsize 2101
+    :lastmodtime '(20350 64452)
+    )
+   (semanticdb-table "ngx_string.h"
+    :file "ngx_string.h"
+    :fsize 501
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_log.h"
+    :file "ngx_log.h"
+    :fsize 3057
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_alloc.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("_NGX_ALLOC_H_INCLUDED_" variable (:constant-flag t) nil [40 62])
+            ("ngx_config.h" include (:system-flag t) nil [65 88])
+            ("ngx_log.h" include (:system-flag t) nil [90 110])
+            ("NGX_MAX_ALLOC_FROM_POOL" variable (:constant-flag t) nil [121 144])
+            ("NGX_DEFAULT_POOL_SIZE" variable (:constant-flag t) nil [181 202])
+            ("ngx_test_null" variable (:constant-flag t) nil [226 239])
+            ("ngx_pool_large_t" type
+               (:typedef ("ngx_pool_large_s" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :superclasses "ngx_pool_large_s"
+                :type "typedef")
+                nil [292 342])
+            ("ngx_pool_large_s" type
+               (:members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("ngx_pool_large_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [373 397])
+                    ("alloc" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [402 427]))                  
+                :type "struct")
+                nil [343 430])
+            ("ngx_pool_t" type
+               (:typedef ("ngx_pool_s" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :superclasses "ngx_pool_s"
+                :type "typedef")
+                nil [432 470])
+            ("ngx_pool_s" type
+               (:members 
+                  ( ("last" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [495 519])
+                    ("end" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [524 547])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [552 576])
+                    ("large" variable
+                       (:pointer 1
+                        :type ("ngx_pool_large_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [581 606])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [611 634]))                  
+                :type "struct")
+                nil [471 637])
+            ("ngx_alloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [656 668])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [669 684]))                  
+                :type "void")
+                nil [640 685])
+            ("ngx_calloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [703 715])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [716 731]))                  
+                :type "void")
+                nil [686 732])
+            ("ngx_create_pool" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [762 774])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [775 790]))                  
+                :type ("ngx_pool_t" type (:type "class") nil nil))
+                nil [734 791])
+            ("ngx_destroy_pool" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [814 831]))                  
+                :type "void")
+                nil [792 832])
+            ("ngx_palloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [851 868])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [869 881]))                  
+                :type "void")
+                nil [834 882])
+            ("ngx_pcalloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("ngx_pool_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [901 918])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [919 931]))                  
+                :type "void")
+                nil [883 932]))          
+    :file "ngx_alloc.h"
+    :pointmax 971
+    :fsize 970
+    :lastmodtime '(20341 54365)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("NGX_DEFAULT_POOL_SIZE" . ((semantic-list "(16 * 1024)" 205 . 216)))
+          ("NGX_MAX_ALLOC_FROM_POOL" . ((semantic-list "(8192 - sizeof(ngx_pool_t))" 145 . 172)))
+          ("_NGX_ALLOC_H_INCLUDED_")
+          ("ngx_test_null" (spp-arg-list ("p" "alloc" "rc") 239 . 253) . 
+              ((IF "if" 255 . 257) (semantic-list "((p = alloc) == NULL)" 258 . 279) (RETURN "return" 280 . 286) (symbol "rc" 287 . 289)))
+          )
+
+    )
+   (semanticdb-table "ngx_server.h"
+    :file "ngx_server.h"
+    :fsize 532
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_connection.h"
+    :file "ngx_connection.h"
+    :fsize 1257
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_listen.h"
+    :file "ngx_listen.h"
+    :fsize 223
+    :lastmodtime '(20341 54365)
+    )
+   (semanticdb-table "ngx_listen.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("ngx_config.h" include (:system-flag t) nil [2 25])
+            ("ngx_types.h" include (:system-flag t) nil [26 48])
+            ("ngx_errno.h" include (:system-flag t) nil [49 71])
+            ("ngx_log.h" include (:system-flag t) nil [72 92])
+            ("ngx_listen.h" include (:system-flag t) nil [93 116])
+            ("ngx_listen" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type ("sockaddr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [142 164])
+                    ("backlog" variable (:type "int") (reparse-symbol arg-sub-list) [165 177])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("ngx_log_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [202 217])
+                    ("addr_text" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [218 234]))                  
+                :type ("ngx_socket_t" type (:type "class") nil nil))
+                nil [118 1463]))          
+    :file "ngx_listen.c"
+    :pointmax 1464
+    :fsize 1463
+    :lastmodtime '(20341 54365)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!sauce!code!OpenSource!nginx!src!core!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

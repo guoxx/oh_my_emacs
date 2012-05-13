@@ -1,0 +1,32 @@
+;; Object toolkit/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "toolkit/"
+  :tables (list 
+   (semanticdb-table "svn_addremove.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("unistd.h" include (:system-flag t) nil [1 20])
+            ("stdio.h" include (:system-flag t) nil [21 39])
+            ("errno.h" include (:system-flag t) nil [40 58])
+            ("stdio.h" include (:system-flag t) nil [59 77])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [88 97])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [98 111]))                  
+                :type "int")
+                nil [79 746]))          
+    :file "svn_addremove.c"
+    :pointmax 717
+    :fsize 746
+    :lastmodtime '(20373 23663)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!sauce!code!project!toolkit!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

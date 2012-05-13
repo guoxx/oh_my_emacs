@@ -1,0 +1,676 @@
+;; Object dcpu16/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "dcpu16/"
+  :tables (list 
+   (semanticdb-table "dcpu.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1391 1409])
+            ("stdlib.h" include (:system-flag t) nil [1410 1429])
+            ("stdint.h" include (:system-flag t) nil [1430 1449])
+            ("string.h" include (:system-flag t) nil [1450 1469])
+            ("ctype.h" include (:system-flag t) nil [1470 1488])
+            ("emulator.h" include nil nil [1490 1511])
+            ("disassemble" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pc" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1537 1545])
+                    ("out" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1546 1556]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1513 1557])
+            ("dumpheader" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1575 1580]))                  
+                :type "void")
+                nil [1559 1749])
+            ("dumpstate" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1766 1781]))                  
+                :type "void")
+                nil [1751 2023])
+            ("load" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2035 2050])
+                    ("fn" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2051 2066]))                  
+                :type "void")
+                nil [2025 2376])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2388 2397])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2398 2410]))                  
+                :type "int")
+                nil [2379 2579]))          
+    :file "dcpu.c"
+    :pointmax 2581
+    :fsize 2580
+    :lastmodtime '(20358 25737)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "emulator.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1507 1525])
+            ("stdlib.h" include (:system-flag t) nil [1526 1545])
+            ("stdint.h" include (:system-flag t) nil [1546 1565])
+            ("string.h" include (:system-flag t) nil [1566 1585])
+            ("ctype.h" include (:system-flag t) nil [1586 1604])
+            ("emulator.h" include nil nil [1606 1627])
+            ("disassemble" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pc" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1653 1661])
+                    ("out" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1662 1672]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1629 1673])
+            ("lit" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u16" type (:type "class") nil nil))
+                nil [1675 1898])
+            ("dcpu_opr" function
+               (:pointer 1
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1914 1929])
+                    ("code" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1930 1939]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1900 2668])
+            ("skiptable" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u8" type (:type "class") nil nil))
+                nil [2670 2859])
+            ("dcpu_skip" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2876 2891]))                  
+                :type "void")
+                nil [2861 3011])
+            ("dcpu_step" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3028 3043]))                  
+                :type "void")
+                nil [3013 4178]))          
+    :file "emulator.c"
+    :pointmax 4179
+    :fsize 4178
+    :lastmodtime '(20358 25737)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "emulator.h"
+    :file "emulator.h"
+    :fsize 1614
+    :lastmodtime '(20358 25737)
+    )
+   (semanticdb-table "assembler.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1502 1520])
+            ("stdlib.h" include (:system-flag t) nil [1521 1540])
+            ("stdint.h" include (:system-flag t) nil [1541 1560])
+            ("stdarg.h" include (:system-flag t) nil [1561 1580])
+            ("string.h" include (:system-flag t) nil [1581 1600])
+            ("ctype.h" include (:system-flag t) nil [1601 1619])
+            ("getopt.h" include (:system-flag t) nil [1620 1639])
+            ("u8" type
+               (:typedef ("uint8_t" type (:type "class") nil nil)
+                :superclasses "uint8_t"
+                :type "typedef")
+                nil [1641 1660])
+            ("u16" type
+               (:typedef ("uint16_t" type (:type "class") nil nil)
+                :superclasses "uint16_t"
+                :type "typedef")
+                nil [1661 1682])
+            ("u32" type
+               (:typedef ("uint32_t" type (:type "class") nil nil)
+                :superclasses "uint32_t"
+                :type "typedef")
+                nil [1683 1704])
+            ("countof" variable (:constant-flag t) nil [1714 1721])
+            ("disassemble" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("pc" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1779 1787])
+                    ("out" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1788 1798]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1755 1799])
+            ("image" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u16" type (:type "class") nil nil))
+                nil [1801 1834])
+            ("note" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u8" type (:type "class") nil nil))
+                nil [1835 1866])
+            ("PC" variable
+               (:typemodifiers ("static")
+                :type ("u16" type (:type "class") nil nil))
+                nil [1867 1885])
+            ("fin" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("FILE" type (:type "class") nil nil))
+                nil [1886 1903])
+            ("filename" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [1904 1937])
+            ("linenumber" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1938 1964])
+            ("linebuffer" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [1966 2003])
+            ("lineptr" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [2004 2038])
+            ("token" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [2039 2056])
+            ("tstring" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [2057 2082])
+            ("tnumber" variable
+               (:typemodifiers ("static")
+                :type ("u16" type (:type "class") nil nil))
+                nil [2083 2102])
+            ("outformat" type
+               (:members 
+                  ( ("OUTFORMAT_PRETTY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2122 2139])
+                    ("OUTFORMAT_HEX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2141 2155])
+                    ("OUTFORMAT_BINARY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2157 2174]))                  
+                :type "enum")
+                nil [2104 2177])
+            ("die" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2188 2204])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [2205 2209]))                  
+                :type "void")
+                nil [2179 2463])
+            ("fixup" type
+               (:members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("fixup" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2481 2500])
+                    ("label" variable
+                       (:pointer 1
+                        :type ("label" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2502 2522])
+                    ("pc" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2524 2531]))                  
+                :type "struct")
+                nil [2465 2534])
+            ("label" type
+               (:members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("label" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2552 2571])
+                    ("pc" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2573 2580])
+                    ("defined" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2582 2594])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2596 2609]))                  
+                :type "struct")
+                nil [2536 2612])
+            ("labels" variable
+               (:pointer 1
+                :type ("label" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2614 2639])
+            ("fixups" variable
+               (:pointer 1
+                :type ("fixup" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2640 2665])
+            ("mklabel" function
+               (:pointer 1
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2689 2706])
+                    ("pc" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2707 2714])
+                    ("def" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2715 2723]))                  
+                :type ("label" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2667 3098])
+            ("use_label" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3115 3132])
+                    ("pc" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3133 3140]))                  
+                :type "void")
+                nil [3100 3342])
+            ("set_label" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3359 3376])
+                    ("pc" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3377 3384]))                  
+                :type "void")
+                nil [3344 3411])
+            ("resolve_fixups" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3433 3438]))                  
+                :type "void")
+                nil [3413 3645])
+            ("tokens" type
+               (:members 
+                  ( ("tA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3662 3665])
+                    ("tB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3666 3669])
+                    ("tC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3670 3673])
+                    ("tX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3674 3677])
+                    ("tY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3678 3681])
+                    ("tZ" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3682 3685])
+                    ("tI" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3686 3689])
+                    ("tJ" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3690 3693])
+                    ("tR0" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3695 3699])
+                    ("tR1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3700 3704])
+                    ("tR2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3705 3709])
+                    ("tR3" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3710 3714])
+                    ("tR4" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3715 3719])
+                    ("tR5" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3720 3724])
+                    ("tR6" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3725 3729])
+                    ("tR7" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3730 3734])
+                    ("tSET" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3736 3741])
+                    ("tADD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3742 3747])
+                    ("tSUB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3748 3753])
+                    ("tMUL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3754 3759])
+                    ("tDIV" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3760 3765])
+                    ("tMOD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3766 3771])
+                    ("tSHL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3772 3777])
+                    ("tSHR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3779 3784])
+                    ("tAND" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3785 3790])
+                    ("tBOR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3791 3796])
+                    ("tXOR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3797 3802])
+                    ("tIFE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3803 3808])
+                    ("tIFN" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3809 3814])
+                    ("tIFG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3815 3820])
+                    ("tIFB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3821 3826])
+                    ("tJSR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3828 3833])
+                    ("tPOP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3835 3840])
+                    ("tPEEK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3841 3847])
+                    ("tPUSH" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3848 3854])
+                    ("tSP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3855 3859])
+                    ("tPC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3860 3864])
+                    ("tO" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3865 3868])
+                    ("tJMP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3870 3875])
+                    ("tMOV" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3876 3881])
+                    ("tNOP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3882 3887])
+                    ("tDATA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3889 3895])
+                    ("tDAT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3896 3901])
+                    ("tDW" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3902 3906])
+                    ("tWORD" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3907 3913])
+                    ("tCOMMA" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3915 3922])
+                    ("tOBRACK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3923 3931])
+                    ("tCBRACK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3932 3940])
+                    ("tCOLON" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3941 3948])
+                    ("tPLUS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3949 3955])
+                    ("tSTRING" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3957 3965])
+                    ("tQSTRING" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3966 3975])
+                    ("tNUMBER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3976 3984])
+                    ("tEOF" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3985 3990]))                  
+                :type "enum")
+                nil [3647 3993])
+            ("tnames" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [3994 4405])
+            ("LASTKEYWORD" variable (:constant-flag t) nil [4414 4425])
+            ("_next" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4443 4448]))                  
+                :type "int")
+                nil [4433 5897])
+            ("next" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5908 5913]))                  
+                :type "int")
+                nil [5899 6004])
+            ("expect" function
+               (:arguments 
+                  ( ("t" variable (:type "int") (reparse-symbol arg-sub-list) [6018 6024]))                  
+                :type "void")
+                nil [6006 6105])
+            ("assemble_imm_or_label" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6134 6139]))                  
+                :type "void")
+                nil [6107 6539])
+            ("assemble_operand" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6562 6567]))                  
+                :type "int")
+                nil [6541 8149])
+            ("assemble_binop" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8171 8176]))                  
+                :type "void")
+                nil [8151 8670])
+            ("assemble_jump" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8691 8696]))                  
+                :type "void")
+                nil [8672 8766])
+            ("assemble" function
+               (:arguments 
+                  ( ("fn" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8782 8797]))                  
+                :type "void")
+                nil [8768 9763])
+            ("emit" function
+               (:arguments 
+                  ( ("fn" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9775 9790])
+                    ("format" variable (:type ("outformat" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [9791 9813]))                  
+                :type "void")
+                nil [9765 10597])
+            ("usage" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [10617 10626])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10627 10639]))                  
+                :type "void")
+                nil [10599 10806])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [10817 10826])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10827 10839]))                  
+                :type "int")
+                nil [10808 11942]))          
+    :file "assembler.c"
+    :pointmax 11944
+    :fsize 11943
+    :lastmodtime '(20358 25737)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!sauce!code!git_repo!dcpu16!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

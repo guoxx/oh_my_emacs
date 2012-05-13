@@ -1,0 +1,158 @@
+;; Object http/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "http/"
+  :tables (list 
+   (semanticdb-table "ngx_http_event.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("ngx_config.h" include (:system-flag t) nil [2 25])
+            ("ngx_log.h" include (:system-flag t) nil [26 46])
+            ("ngx_alloc.h" include (:system-flag t) nil [47 69])
+            ("ngx_hunk.h" include (:system-flag t) nil [70 91])
+            ("ngx_connection.h" include (:system-flag t) nil [92 119])
+            ("ngx_http.h" include (:system-flag t) nil [121 142])
+            ("ngx_http_init_connection" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("ngx_connection_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [296 316]))                  
+                :type "int")
+                nil [267 317])
+            ("ngx_http_init_request" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [351 367]))                  
+                :type "int")
+                nil [318 368])
+            ("ngx_http_process_request" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [405 421]))                  
+                :type "int")
+                nil [369 422])
+            ("ngx_process_http_request_line" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [465 487]))                  
+                :type "int")
+                nil [424 488])
+            ("ngx_process_http_request_header" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [532 554]))                  
+                :type "int")
+                nil [489 555])
+            ("ngx_process_http_request" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [593 615]))                  
+                :type "int")
+                nil [557 616])
+            ("ngx_http_close_request" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [652 668]))                  
+                :type "int")
+                nil [618 669])
+            ("ngx_http_init_connection" function
+               (:arguments 
+                  ( ("c" variable
+                       (:pointer 1
+                        :type ("ngx_connection_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [812 832]))                  
+                :type "int")
+                nil [783 1427])
+            ("ngx_http_init_request" function
+               (:arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1455 1471]))                  
+                :type "int")
+                nil [1429 2411])
+            ("ngx_http_process_request" function
+               (:arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2442 2458]))                  
+                :type "int")
+                nil [2413 3667])
+            ("ngx_process_http_request_line" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3710 3732]))                  
+                :type "int")
+                nil [3669 4110])
+            ("ngx_process_http_request_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4155 4177]))                  
+                :type "int")
+                nil [4112 4771])
+            ("ngx_process_http_request" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("ngx_http_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4809 4831]))                  
+                :type "int")
+                nil [4773 4850])
+            ("ngx_http_close_request" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ev" variable
+                       (:pointer 1
+                        :type ("ngx_event_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6561 6577]))                  
+                :type "int")
+                nil [6527 6806]))          
+    :file "ngx_http_event.c"
+    :pointmax 6807
+    :fsize 6806
+    :lastmodtime '(20350 64449)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "ngx_http.h"
+    :file "ngx_http.h"
+    :fsize 1718
+    :lastmodtime '(20350 64449)
+    )
+   )
+  :file "!Users!sauce!code!OpenSource!nginx!src!http!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

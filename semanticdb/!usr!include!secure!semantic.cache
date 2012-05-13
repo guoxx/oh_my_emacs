@@ -1,0 +1,76 @@
+;; Object secure/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "secure/"
+  :tables (list 
+   (semanticdb-table "_stdio.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("_SECURE__STDIO_H_" variable (:constant-flag t) nil [1115 1132])
+            ("secure/_common.h" include (:system-flag t) nil [1134 1161])
+            ("__DARWIN_LDBL_COMPAT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__sprintf_chk" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1459 1473]))                  
+                :type "int")
+                nil [1437 1474])
+            ("sprintf" variable (:constant-flag t) nil [1484 1491])
+            ("__DARWIN_LDBL_COMPAT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__snprintf_chk" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1700 1715]))                  
+                :type "int")
+                nil [1678 1716])
+            ("snprintf" variable (:constant-flag t) nil [1758 1766])
+            ("__DARWIN_LDBL_COMPAT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__vsprintf_chk" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1982 1997]))                  
+                :type "int")
+                nil [1960 1998])
+            ("vsprintf" variable (:constant-flag t) nil [2008 2016])
+            ("__DARWIN_LDBL_COMPAT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__vsnprintf_chk" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2238 2254]))                  
+                :type "int")
+                nil [2216 2255])
+            ("vsnprintf" variable (:constant-flag t) nil [2265 2274]))          
+    :file "_stdio.h"
+    :pointmax 2396
+    :fsize 2395
+    :lastmodtime '(20022 3403)
+    :unmatched-syntax '((semantic-list 2132 . 2213) (symbol 2116 . 2131) (INT 2112 . 2115) (EXTERN 2105 . 2111) (semantic-list 1885 . 1957) (symbol 1870 . 1884) (INT 1866 . 1869) (EXTERN 1859 . 1865) (semantic-list 1599 . 1675) (symbol 1584 . 1598) (INT 1580 . 1583) (EXTERN 1573 . 1579) (semantic-list 1367 . 1434) (symbol 1353 . 1366) (INT 1349 . 1352) (EXTERN 1342 . 1348) (string 1006 . 1072) (symbol 1000 . 1005) (symbol 994 . 999) (punctuation 993 . 994))
+    :lexical-table 
+        '(("sprintf" (spp-arg-list ("str" "...") 1491 . 1501) . ((symbol "__builtin___sprintf_chk" 1506 . 1529) (semantic-list "(str, 0, __darwin_obsz(str), __VA_ARGS__)" 1530 . 1571)))
+          ("vsprintf" (spp-arg-list ("str" "format" "ap") 2016 . 2033) . ((symbol "__builtin___vsprintf_chk" 2038 . 2062) (semantic-list "(str, 0, __darwin_obsz(str), format, ap)" 2063 . 2103)))
+          ("_SECURE__STDIO_H_")
+          ("snprintf" (spp-arg-list ("str" "len" "...") 1766 . 1781) . ((symbol "__builtin___snprintf_chk" 1786 . 1810) (semantic-list "(str, len, 0, __darwin_obsz(str), __VA_ARGS__)" 1811 . 1857)))
+          ("vsnprintf" (spp-arg-list ("str" "len" "format" "ap") 2274 . 2296) . ((symbol "__builtin___vsnprintf_chk" 2301 . 2326) (semantic-list "(str, len, 0, __darwin_obsz(str), format, ap)" 2327 . 2372)))
+          )
+
+    )
+   (semanticdb-table "_common.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("_SECURE__COMMON_H_" variable (:constant-flag t) nil [1009 1027])
+            ("_USE_FORTIFY_LEVEL" variable (:constant-flag t) nil [1145 1163])
+            ("__darwin_obsz0" variable (:constant-flag t) nil [1269 1283])
+            ("__darwin_obsz" variable (:constant-flag t) nil [1334 1347]))          
+    :file "_common.h"
+    :pointmax 1419
+    :fsize 1418
+    :lastmodtime '(20022 3403)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("_USE_FORTIFY_LEVEL" . ((number "2" 1164 . 1165)))
+          ("_SECURE__COMMON_H_")
+          ("__darwin_obsz" (spp-arg-list ("object") 1347 . 1355) . ((symbol "__builtin_object_size" 1356 . 1377) (semantic-list "(object, _USE_FORTIFY_LEVEL > 1)" 1378 . 1410)))
+          ("__darwin_obsz0" (spp-arg-list ("object") 1283 . 1291) . ((symbol "__builtin_object_size" 1292 . 1313) (semantic-list "(object, 0)" 1314 . 1325)))
+          )
+
+    )
+   )
+  :file "!usr!include!secure!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )
