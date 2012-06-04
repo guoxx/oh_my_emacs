@@ -6,6 +6,7 @@
 (add-to-list 'load-path "~/.emacs.d/diff-mode/")
 (add-to-list 'load-path "~/.emacs.d/protobuf-mode/")
 (add-to-list 'load-path "~/.emacs.d/customize/")
+(add-to-list 'load-path "~/.emacs.d/php-mode/")
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
 
 
@@ -20,6 +21,9 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+;; toolbar
+;; (tool-bar-mode 0)
 
 ;; show line number
 (global-linum-mode t)
@@ -80,7 +84,7 @@
 (require 'color-theme)
 (require 'color-theme-solarized)
 (if window-system
-    (color-theme-solarized-light))
+    (color-theme-solarized-dark))
 ;; ---------------------------------------------------------------------------
 
 
@@ -117,17 +121,17 @@
     (maximize-frame)))
 (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
-;; (set-frame-parameter (selected-frame) 'alpha '(85 50))
-;; ;; (add-to-list 'default-frame-alist '(alpha 85 50))
-;; (eval-when-compile (require 'cl))
-;;  (defun toggle-transparency ()
-;;    (interactive)
-;;    (if (/=
-;;         (cadr (frame-parameter nil 'alpha))
-;;         100)
-;;        (set-frame-parameter nil 'alpha '(100 100))
-;;      (set-frame-parameter nil 'alpha '(85 50))))
-;;  (global-set-key (kbd "C-c t") 'toggle-transparency)
+(set-frame-parameter (selected-frame) 'alpha '(100 100))
+(add-to-list 'default-frame-alist '(alpha 90 90))
+(eval-when-compile (require 'cl))
+(defun toggle-transparency ()
+  (interactive)
+  (if (/=
+       (cadr (frame-parameter nil 'alpha))
+       100)
+      (set-frame-parameter nil 'alpha '(100 100))
+    (set-frame-parameter nil 'alpha '(90 90))))
+(global-set-key (kbd "C-c t") 'toggle-transparency)
 ;; ---------------------------------------------------------------------------
 
 
@@ -173,4 +177,13 @@
 ;; ---------------------------------------------------------------------------
 ;;	customize
 ;;
+;; ---------------------------------------------------------------------------
+
+
+;; ---------------------------------------------------------------------------
+;;	php-mode
+;;
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 ;; ---------------------------------------------------------------------------
