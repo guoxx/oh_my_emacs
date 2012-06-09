@@ -39,9 +39,11 @@
 (setq tab-width 4)
 (setq c-basic-offset 4)
 
-;; disable backup file like this file~
+;; disable backup file like this foo~
 (setq-default make-backup-files nil)
 (setq make-backup-files nil)
+;; disable autosave fiel like #foo#
+(setq auto-save-default nil)
 
 ;; add /usr/local/bin to eshell path
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin"))

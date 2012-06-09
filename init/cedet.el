@@ -40,7 +40,7 @@
 (setq c-mode-hook
       '(lambda ()
          (gtags-mode 1)))
-(define-key gtags-mode-map (kbd "C-g f t") 'gtags-find-tag)
-(define-key gtags-mode-map (kbd "C-g f r") 'gtags-find-rtag)
+(define-key gtags-mode-map (kbd "C-g t") 'gtags-find-tag)
+(define-key gtags-mode-map (kbd "C-g r") 'gtags-find-rtag)
 (define-key gtags-select-mode-map (kbd "C-g b") 'gtags-pop-stack)
 (define-key gtags-mode-map (kbd "C-g b") 'gtags-pop-stack)
