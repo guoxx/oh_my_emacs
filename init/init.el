@@ -1,6 +1,5 @@
 ;; (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/color-theme-solarized/")
-(add-to-list 'load-path "~/.emacs.d/undo-tree/")
 (add-to-list 'load-path "~/.emacs.d/lua-mode/")
 (add-to-list 'load-path "~/.emacs.d/maxframe/")
 (add-to-list 'load-path "~/.emacs.d/diff-mode/")
@@ -9,6 +8,12 @@
 (add-to-list 'load-path "~/.emacs.d/php-mode/")
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
 
+;; ---------------------------------------------------------------------------
+;; load packges
+;;
+(require 'undo-tree)
+(global-undo-tree-mode)
+;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
 ;; common setting
@@ -23,7 +28,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; toolbar
-;; (tool-bar-mode 0)
+(tool-bar-mode 0)
 
 ;; show line number
 (global-linum-mode t)
@@ -86,15 +91,15 @@
 (require 'color-theme)
 (require 'color-theme-solarized)
 (if window-system
-    (color-theme-solarized-dark))
+    (color-theme-solarized-light))
 ;; ---------------------------------------------------------------------------
 
 
 ;; ---------------------------------------------------------------------------
 ;;	undo-mode
 ;;
-(require 'undo-tree)
-(global-undo-tree-mode)
+;; (require 'undo-tree)
+;; (global-undo-tree-mode)
 ;; ---------------------------------------------------------------------------
 
 
@@ -108,20 +113,16 @@
 ;; ---------------------------------------------------------------------------
 ;;	maxframe
 ;;
-(require 'maxframe)
+;; (require 'maximize)
 ;; (add-hook 'window-setup-hook 'maximize-frame t)
-;; (add-to-list 'default-frame-alist '(left . 0)
-;; (add-to-list 'default-frame-alist '(top . 0))
-;; (add-to-list 'default-frame-alist '(height . 80))
-;; (add-to-list 'default-frame-alist '(width . 60))
-(defvar maxFrame-p nil "Check if fullscreen is on or off")
-(defun maxOrMin-frame ()
-  (interactive)
-  (setq maxFrame-p (not maxFrame-p))
-  (if maxFrame-p
-      (restore-frame)
-    (maximize-frame)))
-(global-set-key (kbd "s-M") 'maxOrMin-frame)
+;; (defvar maxFrame-p nil "Check if fullscreen is on or off")
+;; (defun maxOrMin-frame ()
+;;   (interactive)
+;;   (setq maxFrame-p (not maxFrame-p))
+;;   (if maxFrame-p
+;;       (restore-frame)
+;;     (maximize-frame)))
+;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
 (set-frame-parameter (selected-frame) 'alpha '(100 100))
 (add-to-list 'default-frame-alist '(alpha 90 90))
