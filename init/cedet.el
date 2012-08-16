@@ -5,7 +5,8 @@
                                   global-semanticdb-minor-mode
                                   global-semantic-idle-summary-mode
                                   global-semantic-mru-bookmark-mode
-                                  global-semantic-highlight-func-mode))
+                                  global-semantic-highlight-func-mode
+                                  ))
 
 (semantic-mode 1)
 (defun my-semantic-inhibit-func ()
@@ -16,7 +17,7 @@
    (t nil)))
 (add-to-list 'semantic-inhibit-functions 'my-semantic-inhibit-func)
 
-(global-semantic-highlight-edits-mode (if window-system 1 -1))
+;; (global-semantic-highlight-edits-mode (if window-system 1 -1))
 (global-semantic-show-unmatched-syntax-mode 1)
 (global-semantic-show-parser-state-mode 1)
 
@@ -40,7 +41,7 @@
 (setq c-mode-hook
       '(lambda ()
          (gtags-mode 1)))
-(define-key gtags-mode-map (kbd "C-g t") 'gtags-find-tag)
-(define-key gtags-mode-map (kbd "C-g r") 'gtags-find-rtag)
-(define-key gtags-select-mode-map (kbd "C-g b") 'gtags-pop-stack)
-(define-key gtags-mode-map (kbd "C-g b") 'gtags-pop-stack)
+(define-key gtags-mode-map (kbd "C-c t") 'gtags-find-tag)
+(define-key gtags-mode-map (kbd "C-c r") 'gtags-find-rtag)
+(define-key gtags-select-mode-map (kbd "C-c b") 'gtags-pop-stack)
+(define-key gtags-mode-map (kbd "C-c b") 'gtags-pop-stack)

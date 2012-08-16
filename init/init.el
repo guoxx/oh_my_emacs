@@ -11,6 +11,7 @@
 ;; ---------------------------------------------------------------------------
 ;; load packges
 ;;
+;; (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.2/")
 (require 'undo-tree)
 (global-undo-tree-mode)
 ;; ---------------------------------------------------------------------------
@@ -27,15 +28,17 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; toolbar
-(tool-bar-mode 0)
-
 ;; show line number
 (global-linum-mode t)
-(setq linum-format "%d| ")  ;set format
+(setq linum-format "%d|")  ;set format
 ;; highlight current light
-;; (if window-system
-;;     (global-hl-line-mode nil))
+(blink-cursor-mode t)
+
+(if window-system
+    ((lambda ()
+       (global-hl-line-mode nil)
+       (tool-bar-mode 0)
+       (tabbar-mode t))))
 
 ;; set Tab
 (setq-default indent-tabs-mode nil)
@@ -90,8 +93,8 @@
 ;;
 (require 'color-theme)
 (require 'color-theme-solarized)
-(if window-system
-    (color-theme-solarized-light))
+;; (if window-system
+;;     (color-theme-solarized-light))
 ;; ---------------------------------------------------------------------------
 
 
@@ -113,7 +116,7 @@
 ;; ---------------------------------------------------------------------------
 ;;	maxframe
 ;;
-;; (require 'maximize)
+;; (require 'maxframe)
 ;; (add-hook 'window-setup-hook 'maximize-frame t)
 ;; (defvar maxFrame-p nil "Check if fullscreen is on or off")
 ;; (defun maxOrMin-frame ()
@@ -134,7 +137,7 @@
        100)
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(90 90))))
-(global-set-key (kbd "C-c t") 'toggle-transparency)
+(global-set-key (kbd "C-x t") 'toggle-transparency)
 ;; ---------------------------------------------------------------------------
 
 
@@ -151,7 +154,7 @@
 ;; ---------------------------------------------------------------------------
 ;;	diff-mode
 ;;
-(require 'diff-mode-)
+;; (require 'diff-mode-)
 ;; ---------------------------------------------------------------------------
 
 
@@ -189,4 +192,17 @@
 (require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+;; ---------------------------------------------------------------------------
+
+
+;; ---------------------------------------------------------------------------
+;; slime
+;;
+(add-to-list 'load-path "~/.emacs.d/packages/slime/")
+(require 'slime)
+(require 'slime-autoloads)
+(add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
+(add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
+(setq inferior-lisp-program "/usr/local/bin/ccl64") 
+(slime-setup)
 ;; ---------------------------------------------------------------------------
