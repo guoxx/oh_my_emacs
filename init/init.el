@@ -1,20 +1,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/color-theme-solarized/")
-(add-to-list 'load-path "~/.emacs.d/lua-mode/")
-(add-to-list 'load-path "~/.emacs.d/maxframe/")
-(add-to-list 'load-path "~/.emacs.d/diff-mode/")
-(add-to-list 'load-path "~/.emacs.d/protobuf-mode/")
-(add-to-list 'load-path "~/.emacs.d/customize/")
-(add-to-list 'load-path "~/.emacs.d/php-mode/")
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
 
-;; ---------------------------------------------------------------------------
-;; load packges
-;;
-;; (add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-0.5.2/")
-(require 'undo-tree)
-(global-undo-tree-mode)
-;; ---------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/customize/")
 
 ;; ---------------------------------------------------------------------------
 ;; common setting
@@ -34,11 +21,16 @@
 ;; highlight current light
 (blink-cursor-mode t)
 
+;; tabbar mode
 (if window-system
     ((lambda ()
        (global-hl-line-mode nil)
        (tool-bar-mode 0)
        (tabbar-mode t))))
+(global-set-key (kbd "s-{") 'tabbar-backward-group)
+(global-set-key (kbd "s-}") 'tabbar-forward-group)
+(global-set-key (kbd "M-{") 'tabbar-backward-tab)
+(global-set-key (kbd "M-}") 'tabbar-forward-tab)
 
 ;; set Tab
 (setq-default indent-tabs-mode nil)
@@ -91,8 +83,6 @@
 ;; ---------------------------------------------------------------------------
 ;;	color-theme
 ;;
-(require 'color-theme)
-(require 'color-theme-solarized)
 ;; (if window-system
 ;;     (color-theme-solarized-light))
 ;; ---------------------------------------------------------------------------
@@ -101,17 +91,8 @@
 ;; ---------------------------------------------------------------------------
 ;;	undo-mode
 ;;
-;; (require 'undo-tree)
-;; (global-undo-tree-mode)
+(global-undo-tree-mode)
 ;; ---------------------------------------------------------------------------
-
-
-;; ---------------------------------------------------------------------------
-;;	lua-mode
-;;
-(require 'lua-mode)
-;; ---------------------------------------------------------------------------
-
 
 ;; ---------------------------------------------------------------------------
 ;;	maxframe
@@ -152,20 +133,6 @@
 
 
 ;; ---------------------------------------------------------------------------
-;;	diff-mode
-;;
-;; (require 'diff-mode-)
-;; ---------------------------------------------------------------------------
-
-
-;; ---------------------------------------------------------------------------
-;;	protobuf-mode
-;;
-(require 'protobuf-mode)
-;; ---------------------------------------------------------------------------
-
-
-;; ---------------------------------------------------------------------------
 ;;	shell-mode
 ;;
 (require 'shell)
@@ -189,7 +156,6 @@
 ;; ---------------------------------------------------------------------------
 ;;	php-mode
 ;;
-(require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 ;; ---------------------------------------------------------------------------
