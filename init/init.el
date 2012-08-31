@@ -25,6 +25,7 @@
 (if window-system
     ((lambda ()
        (global-hl-line-mode nil)
+       (menu-bar-mode 1)
        (tool-bar-mode 0)
        (tabbar-mode t))))
 (global-set-key (kbd "s-{") 'tabbar-backward-group)
@@ -55,20 +56,26 @@
 
 ;; clipboard
 ;; (setq x-select-enable-clipboard t)
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
+;; (defun copy-from-osx ()
+;;   (shell-command-to-string "pbpaste"))
 
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil)) 
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+;; (defun paste-to-osx (text &optional push)
+;;   (let ((process-connection-type nil)) 
+;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+;;       (process-send-string proc text)
+;;       (process-send-eof proc))))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+;; (setq interprogram-cut-function 'paste-to-osx)
+;; (setq interprogram-paste-function 'copy-from-osx)
 
 ;; y or n
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 ;; ---------------------------------------------------------------------------
 
 
@@ -158,6 +165,7 @@
 ;;
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl$" . php-mode))
 ;; ---------------------------------------------------------------------------
 
 
