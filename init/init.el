@@ -187,3 +187,41 @@
 (add-to-list 'load-path "~/.emacs.d/packages/diff/")
 (require 'diff-mode-)
 ;; ---------------------------------------------------------------------------
+
+;; ---------------------------------------------------------------------------
+;; others
+;;
+(add-to-list 'load-path "~/.emacs.d/packages/")
+(require 'powerline)
+(require 'indent-hint)
+(indent-hint-mode)
+
+(defun concat-symbol (&rest lst)
+  (intern (apply 'concat (mapcar (lambda(x)(if (symbolp x) (symbol-name x) x)) lst))))
+(mapc (lambda (mode)
+        (add-hook
+         (concat-symbol mode '-hook)
+         `(lambda ()
+            (indent-hint-mode))
+         ))
+        '(lisp-mode
+          lisp-interaction-mode
+          emacs-lisp-mode
+          lua-mode
+          python-mode))
+
+
+;; (require 'highlight-indentation)
+;; (set-face-background 'highlight-indentation-face "#e3e3d3")
+;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
+
+;; (setq scroll-margin 1
+;;       scroll-conservatively 10000)
+
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
+(setq mouse-yank-at-point t)
+
+(setq outline-minor-mode-prefix [(control o)])
+;; ---------------------------------------------------------------------------
