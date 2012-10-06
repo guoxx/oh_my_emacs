@@ -198,17 +198,17 @@
 
 (defun concat-symbol (&rest lst)
   (intern (apply 'concat (mapcar (lambda(x)(if (symbolp x) (symbol-name x) x)) lst))))
-(mapc (lambda (mode)
-        (add-hook
-         (concat-symbol mode '-hook)
-         `(lambda ()
-            (indent-hint-mode))
-         ))
-        '(lisp-mode
-          lisp-interaction-mode
-          emacs-lisp-mode
-          lua-mode
-          python-mode))
+;; (mapc (lambda (mode)
+;;         (add-hook
+;;          (concat-symbol mode '-hook)
+;;          `(lambda ()
+;;             (indent-hint-mode))
+;;          ))
+;;         '(lisp-mode
+;;           lisp-interaction-mode
+;;           emacs-lisp-mode
+;;           lua-mode
+;;           python-mode))
 
 
 ;; (require 'highlight-indentation)
@@ -220,8 +220,14 @@
 ;;       scroll-conservatively 10000)
 
 (show-paren-mode t)
-(setq show-paren-style 'parentheses)
+(setq show-paren-style 'mixed)
 (setq mouse-yank-at-point t)
 
 (setq outline-minor-mode-prefix [(control o)])
+
+(set-variable 'scheme-program-name "/usr/local/bin/racket")
+(add-to-list 'load-path "~/.emacs.d/packages/quack")
+(require 'quack)
+;; (setq geiser-racket-binary "/usr/local/bin/racket")
 ;; ---------------------------------------------------------------------------
+

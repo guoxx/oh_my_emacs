@@ -1,5 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/gtags/")
-
 (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
                                   global-semantic-idle-completions-mode
                                   global-semanticdb-minor-mode
@@ -18,7 +16,7 @@
 (add-to-list 'semantic-inhibit-functions 'my-semantic-inhibit-func)
 
 ;; (global-semantic-highlight-edits-mode (if window-system 1 -1))
-(global-semantic-show-unmatched-syntax-mode 1)
+;; (global-semantic-show-unmatched-syntax-mode 1)
 (global-semantic-show-parser-state-mode 1)
 
 (defconst user-include-dirs
@@ -36,6 +34,7 @@
 (define-key semantic-mode-map (kbd "M-ESC") 'semantic-ia-complete-symbol)
 
 
+(add-to-list 'load-path "~/.emacs.d/packages/gtags/")
 (require 'gtags)
 (setq gtags-global-command "/usr/local/bin/global")
 (setq c-mode-hook
