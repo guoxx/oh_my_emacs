@@ -32,6 +32,11 @@
 (global-set-key (kbd "s-}") 'tabbar-forward-group)
 (global-set-key (kbd "M-{") 'tabbar-backward-tab)
 (global-set-key (kbd "M-}") 'tabbar-forward-tab)
+(set-face-foreground 'tabbar-default "#93a1a1")
+(set-face-background 'tabbar-default "#073642")
+(set-face-foreground 'tabbar-selected "#839496")
+(set-face-bold-p 'tabbar-selected nil)
+(set-face-attribute 'tabbar-button nil :box '(:line-width 1 :color "#073642"))
 
 ;; set Tab
 (setq-default indent-tabs-mode nil)
@@ -90,8 +95,9 @@
 ;; ---------------------------------------------------------------------------
 ;;	color-theme
 ;;
-;; (if window-system
-;;     (color-theme-solarized-light))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
+(load-theme 'solarized-light t)
+;; (load-theme 'solarized-dark t)
 ;; ---------------------------------------------------------------------------
 
 
@@ -116,7 +122,7 @@
 ;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
 (set-frame-parameter (selected-frame) 'alpha '(100 100))
-(add-to-list 'default-frame-alist '(alpha 90 90))
+;; (add-to-list 'default-frame-alist '(alpha 90 90))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
   (interactive)
@@ -172,13 +178,13 @@
 ;; ---------------------------------------------------------------------------
 ;; slime
 ;;
-(add-to-list 'load-path "~/.emacs.d/packages/slime/")
-(require 'slime)
-(require 'slime-autoloads)
-(add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
-(add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
-(setq inferior-lisp-program "/usr/local/bin/ccl64") 
-(slime-setup)
+;; (add-to-list 'load-path "~/.emacs.d/packages/slime/")
+;; (require 'slime)
+;; (require 'slime-autoloads)
+;; (add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
+;; (add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
+;; (setq inferior-lisp-program "/usr/local/bin/ccl64") 
+;; (slime-setup)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
@@ -192,7 +198,7 @@
 ;; others
 ;;
 (add-to-list 'load-path "~/.emacs.d/packages/")
-(require 'powerline)
+;; (require 'powerline)
 (require 'indent-hint)
 (indent-hint-mode)
 

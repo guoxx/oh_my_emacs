@@ -1,10 +1,10 @@
-(setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
-                                  global-semantic-idle-completions-mode
-                                  global-semanticdb-minor-mode
-                                  global-semantic-idle-summary-mode
-                                  global-semantic-mru-bookmark-mode
-                                  global-semantic-highlight-func-mode
-                                  ))
+;; (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
+;;                                   global-semantic-idle-completions-mode
+;;                                   global-semanticdb-minor-mode
+;;                                   global-semantic-idle-summary-mode
+;;                                   global-semantic-mru-bookmark-mode
+;;                                   global-semantic-highlight-func-mode
+;;                                   ))
 
 (semantic-mode 1)
 (defun my-semantic-inhibit-func ()
@@ -38,6 +38,9 @@
 (require 'gtags)
 (setq gtags-global-command "/usr/local/bin/global")
 (setq c-mode-hook
+      '(lambda ()
+         (gtags-mode 1)))
+(setq c++-mode-hook
       '(lambda ()
          (gtags-mode 1)))
 (define-key gtags-mode-map (kbd "C-c t") 'gtags-find-tag)
