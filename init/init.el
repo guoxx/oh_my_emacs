@@ -34,7 +34,7 @@
 (global-set-key (kbd "M-}") 'tabbar-forward-tab)
 (set-face-foreground 'tabbar-default "#93a1a1")
 (set-face-background 'tabbar-default "#073642")
-(set-face-foreground 'tabbar-selected "#839496")
+(set-face-foreground 'tabbar-selected "#fdf6e3")
 (set-face-bold-p 'tabbar-selected nil)
 (set-face-attribute 'tabbar-button nil :box '(:line-width 1 :color "#073642"))
 
