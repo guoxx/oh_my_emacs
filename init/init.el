@@ -16,8 +16,19 @@
 (prefer-coding-system 'utf-8)
 
 ;; show line number
+(global-visual-line-mode 1)
 (global-linum-mode t)
-(setq linum-format "%d|")  ;set format
+;; (custom-set-variables '(linum-format (quote "%7d")))
+;; (custom-set-variables '(linum-format 'dynamic))
+(setq linum-format                               
+      (lambda (line)                                    
+    (propertize                                  
+     (format                                 
+      (let                                   
+      ((w (length (number-to-string (count-lines (point-min)         
+                             (point-max))))))    
+    (concat " %" (number-to-string w) "d|")) line) 'face 'linum)))
+;; (setq linum-format "%d|")  ;set format
 ;; highlight current light
 (blink-cursor-mode t)
 
@@ -54,6 +65,7 @@
 ;; add /usr/local/bin to eshell path
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin")))
+(setq w3m-command "/usr/local/bin/w3m")
 
 ;; buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -105,6 +117,12 @@
 ;;	undo-mode
 ;;
 (global-undo-tree-mode)
+;; ---------------------------------------------------------------------------
+
+;; ---------------------------------------------------------------------------
+;;	browse-kill-ring
+;;
+(global-set-key (kbd "M-y") 'browse-kill-ring)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
