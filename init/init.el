@@ -217,11 +217,11 @@
 ;;
 (add-to-list 'load-path "~/.emacs.d/packages/")
 ;; (require 'powerline)
-(require 'indent-hint)
-(indent-hint-mode)
+;; (require 'indent-hint)
+;; (indent-hint-mode)
 
-(defun concat-symbol (&rest lst)
-  (intern (apply 'concat (mapcar (lambda(x)(if (symbolp x) (symbol-name x) x)) lst))))
+;; (defun concat-symbol (&rest lst)
+;;   (intern (apply 'concat (mapcar (lambda(x)(if (symbolp x) (symbol-name x) x)) lst))))
 ;; (mapc (lambda (mode)
 ;;         (add-hook
 ;;          (concat-symbol mode '-hook)
