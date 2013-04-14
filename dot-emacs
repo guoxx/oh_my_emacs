@@ -1,0 +1,22 @@
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+
+
+(setq oh-my-emacs-init-dir "~/.emacs.d/init/")
+(setq oh-my-emacs-init-files '(
+							   "bootstrap.el"
+
+							   "objc.el"
+							   "lua.el"
+							   "scheme.el"
+
+							   "cedet.el"
+                               "auto-cmpl.el"
+
+							   "init.el"
+                               ))
+
+(mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))
+;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))

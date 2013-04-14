@@ -1,8 +1,3 @@
-;; (add-to-list 'load-path "~/.emacs.d")
-;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
-
-(add-to-list 'load-path "~/.emacs.d/customize/")
-
 ;; ---------------------------------------------------------------------------
 ;; common setting
 ;;
@@ -18,17 +13,9 @@
 ;; show line number
 (global-visual-line-mode 1)
 (global-linum-mode t)
-;; (custom-set-variables '(linum-format (quote "%7d")))
-;; (custom-set-variables '(linum-format 'dynamic))
-(setq linum-format                               
-      (lambda (line)                                    
-    (propertize                                  
-     (format                                 
-      (let                                   
-      ((w (length (number-to-string (count-lines (point-min)         
-                             (point-max))))))    
-    (concat " %" (number-to-string w) "d|")) line) 'face 'linum)))
-;; (setq linum-format "%d|")  ;set format
+;; set format
+(setq linum-format "%d|")  
+
 ;; highlight current light
 (blink-cursor-mode t)
 
@@ -38,22 +25,23 @@
        (global-hl-line-mode nil)
        (menu-bar-mode 1)
        (tool-bar-mode 0)
-       (tabbar-mode t))))
-(global-set-key (kbd "s-{") 'tabbar-backward-group)
-(global-set-key (kbd "s-}") 'tabbar-forward-group)
-(global-set-key (kbd "M-{") 'tabbar-backward-tab)
-(global-set-key (kbd "M-}") 'tabbar-forward-tab)
-(set-face-foreground 'tabbar-default "#93a1a1")
-(set-face-background 'tabbar-default "#073642")
-(set-face-foreground 'tabbar-selected "#fdf6e3")
-(set-face-bold-p 'tabbar-selected nil)
-(set-face-attribute 'tabbar-button nil :box '(:line-width 1 :color "#073642"))
+       ;; (tabbar-mode t)
+	   )))
+;; (global-set-key (kbd "s-{") 'tabbar-backward-group)
+;; (global-set-key (kbd "s-}") 'tabbar-forward-group)
+;; (global-set-key (kbd "M-{") 'tabbar-backward-tab)
+;; (global-set-key (kbd "M-}") 'tabbar-forward-tab)
+;; (if window-system
+;; 	((lambda ()
+;; 	   (set-face-foreground 'tabbar-default "#93a1a1")
+;; 	   (set-face-background 'tabbar-default "#073642")
+;; 	   (set-face-foreground 'tabbar-selected "#fdf6e3")
+;; 	   (set-face-bold-p 'tabbar-selected nil)
+;; 	   (set-face-attribute 'tabbar-button nil :box '(:line-width 1 :color "#073642")))))
 
 ;; set Tab
-(setq-default indent-tabs-mode nil)
-(setq indent-tabs-mode nil)
-(setq default-tab-width 4)
-(setq tab-width 4)
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 4)
 (setq c-basic-offset 4)
 
 ;; disable backup file like this foo~
@@ -63,8 +51,8 @@
 (setq auto-save-default nil)
 
 ;; add /usr/local/bin to eshell path
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin"))
-(setq exec-path (append exec-path '("/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin")))
+;; (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin"))
+;; (setq exec-path (append exec-path '("/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin")))
 (setq w3m-command "/usr/local/bin/w3m")
 
 ;; buffer
@@ -73,17 +61,6 @@
 
 ;; clipboard
 ;; (setq x-select-enable-clipboard t)
-;; (defun copy-from-osx ()
-;;   (shell-command-to-string "pbpaste"))
-
-;; (defun paste-to-osx (text &optional push)
-;;   (let ((process-connection-type nil)) 
-;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-;;       (process-send-string proc text)
-;;       (process-send-eof proc))))
-
-;; (setq interprogram-cut-function 'paste-to-osx)
-;; (setq interprogram-paste-function 'copy-from-osx)
 
 ;; y or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -93,11 +70,19 @@
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 ;; (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 ;; (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;; mini buffer
+(defun switch-to-minibuffer-window ()
+  "switch to minibuffer window (if active)"
+  (interactive)
+  (when (active-minibuffer-window)
+    (select-window (active-minibuffer-window))))
+(global-set-key (kbd "<f7>") 'switch-to-minibuffer-window)
 ;; ---------------------------------------------------------------------------
 
 
 ;; ---------------------------------------------------------------------------
-;;	custom key
+;; custom key
 ;;
 ;;(load "~/.emacs.d/config/emacs.el/CustomCommomEditKey.el")
 ;;(require 'CustomKey)
@@ -105,25 +90,30 @@
 
 
 ;; ---------------------------------------------------------------------------
-;;	color-theme
+;; color-theme
 ;;
 (add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
-(load-theme 'solarized-light t)
-;; (load-theme 'solarized-dark t)
+(if window-system
+	(load-theme 'solarized-light t))
 ;; ---------------------------------------------------------------------------
 
 
 ;; ---------------------------------------------------------------------------
-;;	undo-mode
+;; undo-mode
 ;;
 (global-undo-tree-mode)
+(defun undo-tree-clear ()
+  (interactive)
+  (setq buffer-undo-tree nil))
 ;; ---------------------------------------------------------------------------
 
+
 ;; ---------------------------------------------------------------------------
-;;	browse-kill-ring
+;; browse-kill-ring
 ;;
 (global-set-key (kbd "M-y") 'browse-kill-ring)
 ;; ---------------------------------------------------------------------------
+
 
 ;; ---------------------------------------------------------------------------
 ;;	maxframe
@@ -154,17 +144,7 @@
 
 
 ;; ---------------------------------------------------------------------------
-;;	auto-complete
-;;
-;; (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
-;; (require 'auto-complete-config)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
-;; (ac-config-default)
-;; ---------------------------------------------------------------------------
-
-
-;; ---------------------------------------------------------------------------
-;;	shell-mode
+;; shell-mode
 ;;
 (require 'shell)
 (defun clear-shell ()
@@ -178,32 +158,25 @@
   '(define-key shell-mode-map (kbd "C-l") 'clear-shell))
 ;; ---------------------------------------------------------------------------
 
-;; ---------------------------------------------------------------------------
-;;	customize
-;;
-;; ---------------------------------------------------------------------------
-
 
 ;; ---------------------------------------------------------------------------
-;;	php-mode
+;; php-mode
 ;;
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl$" . php-mode))
 ;; ---------------------------------------------------------------------------
 
-
 ;; ---------------------------------------------------------------------------
-;; slime
+;; lua-mode
 ;;
-;; (add-to-list 'load-path "~/.emacs.d/packages/slime/")
-;; (require 'slime)
-;; (require 'slime-autoloads)
-;; (add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
-;; (add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
-;; (setq inferior-lisp-program "/usr/local/bin/ccl64") 
-;; (slime-setup)
+(add-to-list 'load-path "~/.emacs.d/packages/lua-mode/")
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+    (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+(add-hook 'lua-mode-hook 'auto-complete-mode)
 ;; ---------------------------------------------------------------------------
+
 
 ;; ---------------------------------------------------------------------------
 ;; diff-mode
@@ -212,46 +185,28 @@
 (require 'diff-mode-)
 ;; ---------------------------------------------------------------------------
 
+
 ;; ---------------------------------------------------------------------------
 ;; others
 ;;
 (add-to-list 'load-path "~/.emacs.d/packages/")
 ;; (require 'powerline)
-;; (require 'indent-hint)
-;; (indent-hint-mode)
 
-;; (defun concat-symbol (&rest lst)
-;;   (intern (apply 'concat (mapcar (lambda(x)(if (symbolp x) (symbol-name x) x)) lst))))
-;; (mapc (lambda (mode)
-;;         (add-hook
-;;          (concat-symbol mode '-hook)
-;;          `(lambda ()
-;;             (indent-hint-mode))
-;;          ))
-;;         '(lisp-mode
-;;           lisp-interaction-mode
-;;           emacs-lisp-mode
-;;           lua-mode
-;;           python-mode))
-
-
-;; (require 'highlight-indentation)
-;; (set-face-background 'highlight-indentation-face "#e3e3d3")
-;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
-
-
-;; (setq scroll-margin 1
-;;       scroll-conservatively 10000)
 
 (show-paren-mode t)
 (setq show-paren-style 'mixed)
 (setq mouse-yank-at-point t)
 
 (setq outline-minor-mode-prefix [(control o)])
-
-(set-variable 'scheme-program-name "/usr/local/bin/racket")
-(add-to-list 'load-path "~/.emacs.d/packages/quack")
-(require 'quack)
-;; (setq geiser-racket-binary "/usr/local/bin/racket")
 ;; ---------------------------------------------------------------------------
 
+
+;; ---------------------------------------------------------------------------
+;; helm
+;;
+(require 'helm)
+(require 'helm-utils)
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-imenu)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; ---------------------------------------------------------------------------
