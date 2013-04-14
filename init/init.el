@@ -78,6 +78,8 @@
   (when (active-minibuffer-window)
     (select-window (active-minibuffer-window))))
 (global-set-key (kbd "<f7>") 'switch-to-minibuffer-window)
+
+(delete-selection-mode t)
 ;; ---------------------------------------------------------------------------
 
 
