@@ -25,24 +25,45 @@
        (global-hl-line-mode nil)
        (menu-bar-mode 1)
        (tool-bar-mode 0)
-       ;; (tabbar-mode t)
+       (tabbar-mode t)
 	   )))
-;; (global-set-key (kbd "s-{") 'tabbar-backward-group)
-;; (global-set-key (kbd "s-}") 'tabbar-forward-group)
-;; (global-set-key (kbd "M-{") 'tabbar-backward-tab)
-;; (global-set-key (kbd "M-}") 'tabbar-forward-tab)
-;; (if window-system
-;; 	((lambda ()
-;; 	   (set-face-foreground 'tabbar-default "#93a1a1")
-;; 	   (set-face-background 'tabbar-default "#073642")
-;; 	   (set-face-foreground 'tabbar-selected "#fdf6e3")
-;; 	   (set-face-bold-p 'tabbar-selected nil)
-;; 	   (set-face-attribute 'tabbar-button nil :box '(:line-width 1 :color "#073642")))))
+(global-set-key (kbd "s-{") 'tabbar-backward-group)
+(global-set-key (kbd "s-}") 'tabbar-forward-group)
+(global-set-key (kbd "M-{") 'tabbar-backward-tab)
+(global-set-key (kbd "M-}") 'tabbar-forward-tab)
+
+(custom-set-variables
+ '(tabbar-separator (quote (0.5)))
+ '(tabbar-use-images nil))
+
+(defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
+  `(custom-set-faces
+    '(tabbar-button ((t (:inherit tabbar-default))))
+    '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
+    '(tabbar-highlight ((t (:overline ,background))))
+    '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
+    '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
+  )
+
+;; (tabbar-customize-faces-macro 
+;;  "gray50"                               ;foreground
+;;  "gray15"                               ;background
+;;  "white"                               ;sforeground
+;;  "gray60"                               ;uforeground
+;;  "gray25"                               ;ubackground
+;;  )
+(tabbar-customize-faces-macro 
+ "gray50"                               ;foreground
+ "gray15"                               ;background
+ "white"                               ;sforeground
+ "gray60"                               ;uforeground
+ "gray15"                               ;ubackground
+ )
 
 ;; set Tab
 (setq-default indent-tabs-mode t)
-(setq-default tab-width 4)
-(setq c-basic-offset 4)
+(setq-default tab-width 6)
+(setq c-basic-offset 6)
 
 ;; disable backup file like this foo~
 (setq-default make-backup-files nil)
@@ -94,9 +115,11 @@
 ;; ---------------------------------------------------------------------------
 ;; color-theme
 ;;
-(add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
+;; (if window-system
+;; 	(load-theme 'solarized-light t))
 (if window-system
-	(load-theme 'solarized-light t))
+	(load-theme 'zenburn t))
 ;; ---------------------------------------------------------------------------
 
 
