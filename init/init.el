@@ -61,9 +61,9 @@
  )
 
 ;; set Tab
-(setq-default indent-tabs-mode t)
-(setq-default tab-width 6)
-(setq c-basic-offset 6)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-basic-offset 4)
 
 ;; disable backup file like this foo~
 (setq-default make-backup-files nil)
@@ -190,16 +190,6 @@
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl$" . php-mode))
-;; ---------------------------------------------------------------------------
-
-;; ---------------------------------------------------------------------------
-;; lua-mode
-;;
-(add-to-list 'load-path "~/.emacs.d/packages/lua-mode/")
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-    (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-(add-hook 'lua-mode-hook 'auto-complete-mode)
 ;; ---------------------------------------------------------------------------
 
 

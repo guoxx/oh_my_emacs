@@ -6,16 +6,16 @@
 
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
-							   "bootstrap.el"
+					 "bootstrap.el"
 
-							   "objc.el"
-							   "lua.el"
-							   "scheme.el"
+					 "objc.el"
+					 "lua.el"
+					 "scheme.el"
 
-							   "cedet.el"
+					 "cedet.el"
                                "auto-cmpl.el"
 
-							   "init.el"
+					 "init.el"
                                ))
 
 (mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))
