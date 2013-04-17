@@ -13,52 +13,10 @@
 ;; show line number
 (global-visual-line-mode 1)
 (global-linum-mode t)
-;; set format
 (setq linum-format "%d|")  
 
 ;; highlight current light
 (blink-cursor-mode t)
-
-;; tabbar mode
-(if window-system
-    ((lambda ()
-       (global-hl-line-mode nil)
-       (menu-bar-mode 1)
-       (tool-bar-mode 0)
-       (tabbar-mode t)
-	   )))
-(global-set-key (kbd "s-{") 'tabbar-backward-group)
-(global-set-key (kbd "s-}") 'tabbar-forward-group)
-(global-set-key (kbd "M-{") 'tabbar-backward-tab)
-(global-set-key (kbd "M-}") 'tabbar-forward-tab)
-
-(custom-set-variables
- '(tabbar-separator (quote (0.5)))
- '(tabbar-use-images nil))
-
-(defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
-  `(custom-set-faces
-    '(tabbar-button ((t (:inherit tabbar-default))))
-    '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
-    '(tabbar-highlight ((t (:overline ,background))))
-    '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
-    '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
-  )
-
-;; (tabbar-customize-faces-macro 
-;;  "gray50"                               ;foreground
-;;  "gray15"                               ;background
-;;  "white"                               ;sforeground
-;;  "gray60"                               ;uforeground
-;;  "gray25"                               ;ubackground
-;;  )
-(tabbar-customize-faces-macro 
- "gray50"                               ;foreground
- "gray15"                               ;background
- "white"                               ;sforeground
- "gray60"                               ;uforeground
- "gray15"                               ;ubackground
- )
 
 ;; set Tab
 (setq-default indent-tabs-mode nil)
@@ -70,11 +28,6 @@
 (setq make-backup-files nil)
 ;; disable autosave fiel like #foo#
 (setq auto-save-default nil)
-
-;; add /usr/local/bin to eshell path
-;; (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin"))
-;; (setq exec-path (append exec-path '("/usr/local/bin:~/bin:/usr/local/mysql/bin/:$HOME/Dropbox/bin")))
-(setq w3m-command "/usr/local/bin/w3m")
 
 ;; buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -105,14 +58,6 @@
 
 
 ;; ---------------------------------------------------------------------------
-;; custom key
-;;
-;;(load "~/.emacs.d/config/emacs.el/CustomCommomEditKey.el")
-;;(require 'CustomKey)
-;; ---------------------------------------------------------------------------
-
-
-;; ---------------------------------------------------------------------------
 ;; color-theme
 ;;
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
@@ -120,6 +65,44 @@
 ;; 	(load-theme 'solarized-light t))
 (if window-system
 	(load-theme 'zenburn t))
+;; ---------------------------------------------------------------------------
+
+
+;; ---------------------------------------------------------------------------
+;; tabbar
+;;
+(if window-system
+    ((lambda ()
+       (global-hl-line-mode nil)
+       (menu-bar-mode 1)
+       (tool-bar-mode 0)
+       (tabbar-mode t)
+	   )))
+(global-set-key (kbd "s-{") 'tabbar-backward-group)
+(global-set-key (kbd "s-}") 'tabbar-forward-group)
+(global-set-key (kbd "M-{") 'tabbar-backward-tab)
+(global-set-key (kbd "M-}") 'tabbar-forward-tab)
+
+(custom-set-variables
+ '(tabbar-separator (quote (0.5)))
+ '(tabbar-use-images nil))
+
+(defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
+  `(custom-set-faces
+    '(tabbar-button ((t (:inherit tabbar-default))))
+    '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
+    '(tabbar-highlight ((t (:overline ,background))))
+    '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
+    '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
+  )
+
+(tabbar-customize-faces-macro 
+ "gray50"                               ;foreground
+ "gray15"                               ;background
+ "white"                                ;sforeground
+ "gray60"                               ;uforeground
+ "gray15"                               ;ubackground
+ )
 ;; ---------------------------------------------------------------------------
 
 
@@ -181,6 +164,9 @@
 
 (eval-after-load "shell"
   '(define-key shell-mode-map (kbd "C-l") 'clear-shell))
+
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 ;; ---------------------------------------------------------------------------
 
 

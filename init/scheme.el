@@ -7,13 +7,10 @@
 (autoload 'run-scheme "iuscheme" "Switch to interactive Scheme buffer." t)
 (setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
 
-;; (custom-set-variables '(scheme-program-name "/usr/bin/petite"))
-(custom-set-variables '(scheme-program-name "/usr/local/bin/racket"))
 
-;; (defun run-chez-scheme ()
-;;   (interactive "*")
-;;   (if (< (count-windows) 2) (split-window))
-;;   (run-scheme "/usr/bin/petite"))
+(if t
+    (custom-set-variables '(scheme-program-name "petite"))
+  (custom-set-variables '(scheme-program-name "racket")))
 
 
 ;; (autoload 'paredit-mode "paredit"
