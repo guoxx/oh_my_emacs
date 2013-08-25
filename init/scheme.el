@@ -6,11 +6,12 @@
 (autoload 'scheme-mode "iuscheme" "Major mode for Scheme." t)
 (autoload 'run-scheme "iuscheme" "Switch to interactive Scheme buffer." t)
 (setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.rkt" . scheme-mode) auto-mode-alist))
+(setq scheme-indentation-style 'cps)
 
 
-(if t
-    (custom-set-variables '(scheme-program-name "petite"))
-  (custom-set-variables '(scheme-program-name "racket")))
+;; (custom-set-variables '(scheme-program-name "petite"))
+(custom-set-variables '(scheme-program-name "racket"))
 
 
 ;; (autoload 'paredit-mode "paredit"
@@ -60,6 +61,6 @@
 
 (add-hook 'scheme-mode-hook
   (lambda ()
-    ;; (paredit-mode 1)
+    (paredit-mode 1)
     (define-key scheme-mode-map (kbd "<f5>") 'scheme-send-last-sexp-split-window)
     (define-key scheme-mode-map (kbd "<f6>") 'scheme-send-definition-split-window)))

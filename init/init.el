@@ -60,24 +60,30 @@
 ;; ---------------------------------------------------------------------------
 ;; color-theme
 ;;
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/packages/emacs-color-theme-solarized/")
 ;; (if window-system
-;; 	(load-theme 'solarized-light t))
-(if window-system
-	(load-theme 'zenburn t))
+;; 	(load-theme 'zenburn t))
+
+;; (load-theme 'zenburn t)
+;; (load-theme 'solarized-light t)
 ;; ---------------------------------------------------------------------------
 
 
 ;; ---------------------------------------------------------------------------
 ;; tabbar
 ;;
+;; (if window-system
+;;     ((lambda ()
+;;        (global-hl-line-mode nil)
+;;        (menu-bar-mode 1)
+;;        (tool-bar-mode 0)
+;;        (tabbar-mode t)
+;; 	   )))
 (if window-system
-    ((lambda ()
-       (global-hl-line-mode nil)
-       (menu-bar-mode 1)
-       (tool-bar-mode 0)
-       (tabbar-mode t)
-	   )))
+    (global-hl-line-mode nil))
+(menu-bar-mode 1)
+(tool-bar-mode 0)
+(tabbar-mode t)
+
 (global-set-key (kbd "s-{") 'tabbar-backward-group)
 (global-set-key (kbd "s-}") 'tabbar-forward-group)
 (global-set-key (kbd "M-{") 'tabbar-backward-tab)
@@ -195,7 +201,7 @@
 
 
 (show-paren-mode t)
-(setq show-paren-style 'mixed)
+(setq show-paren-style 'parenthesis)
 (setq mouse-yank-at-point t)
 
 (setq outline-minor-mode-prefix [(control o)])
@@ -209,5 +215,12 @@
 (require 'helm-utils)
 (require 'helm-config)
 (global-set-key (kbd "C-c h") 'helm-imenu)
+(helm-mode 1)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; ---------------------------------------------------------------------------
+
+;; ---------------------------------------------------------------------------
+;; starter kit
+;;
+(remove-hook 'prog-mode-hook 'idle-highlight-mode)
 ;; ---------------------------------------------------------------------------

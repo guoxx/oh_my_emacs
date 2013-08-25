@@ -3,7 +3,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
                                "bootstrap.el"
@@ -21,3 +20,6 @@
 
 (mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
+
+;; (put 'upcase-region 'disabled nil)
+;; (put 'downcase-region 'disabled nil)
