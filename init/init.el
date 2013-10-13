@@ -214,8 +214,8 @@
 (require 'helm)
 (require 'helm-utils)
 (require 'helm-config)
+;; (helm-mode 0)
 (global-set-key (kbd "C-c h") 'helm-imenu)
-(helm-mode 1)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; ---------------------------------------------------------------------------
 
@@ -223,4 +223,5 @@
 ;; starter kit
 ;;
 (remove-hook 'prog-mode-hook 'idle-highlight-mode)
+(remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
 ;; ---------------------------------------------------------------------------
