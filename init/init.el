@@ -60,11 +60,9 @@
 ;; ---------------------------------------------------------------------------
 ;; color-theme
 ;;
-;; (if window-system
-;; 	(load-theme 'zenburn t))
-
 ;; (load-theme 'zenburn t)
-;; (load-theme 'solarized-light t)
+;; (if window-system
+;;     (load-theme 'solarized-dark t))
 ;; ---------------------------------------------------------------------------
 
 
