@@ -6,6 +6,7 @@
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
                                "bootstrap.el"
+                               "bmk.el"
 
                                "objc.el"
                                "lua.el"

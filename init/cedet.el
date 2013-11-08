@@ -47,3 +47,27 @@
 (define-key gtags-mode-map (kbd "C-c r") 'gtags-find-rtag)
 (define-key gtags-select-mode-map (kbd "C-c b") 'gtags-pop-stack)
 (define-key gtags-mode-map (kbd "C-c b") 'gtags-pop-stack)
+
+
+(defun get-include-guard ()
+  "Return a string suitable for use in a C/C++ include guard"
+  (let* ((fname (buffer-file-name (current-buffer)))
+         (fbasename (replace-regexp-in-string ".*/" "" fname))
+         (inc-guard-base (replace-regexp-in-string "[.-]"
+                                                   "_"
+                                                   fbasename)))
+    (concat "__" (upcase inc-guard-base) "__")))
+
+(add-hook 'find-file-not-found-hooks
+          '(lambda ()
+             (let ((file-name (buffer-file-name (current-buffer))))
+               (when (string= ".h" (substring file-name -2))
+                 (let ((include-guard (get-include-guard)))
+                   (insert "#ifndef " include-guard)
+                   (newline)
+                   (insert "#define " include-guard)
+                   (newline 4)
+                   (insert "#endif")
+                   (newline)
+                   (previous-line 3)
+                   (set-buffer-modified-p nil))))))

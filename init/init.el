@@ -225,3 +225,9 @@
 (remove-hook 'prog-mode-hook 'idle-highlight-mode)
 (remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
 ;; ---------------------------------------------------------------------------
+
+;; ---------------------------------------------------------------------------
+;; ls
+;;
+(setq ls-lisp-use-insert-directory-program nil)
+(require 'ls-lisp)

@@ -4,4 +4,6 @@
 (global-set-key (kbd "C-S-K") 'kill-to-line-beginning)
 
 
+(global-set-key (kbd "C-s-<up>") 'ff-find-other-file)
+
 (provide 'custom-key)
