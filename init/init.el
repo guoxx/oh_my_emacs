@@ -43,7 +43,7 @@
 ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 ;; (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 ;; (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-;; (setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; mini buffer
 (defun switch-to-minibuffer-window ()
@@ -63,6 +63,8 @@
 ;; (load-theme 'zenburn t)
 ;; (if window-system
 ;;     (load-theme 'solarized-dark t))
+(if window-system
+    (load-theme 'zenburn t))
 ;; ---------------------------------------------------------------------------
 
 
@@ -80,7 +82,7 @@
     (global-hl-line-mode nil))
 (menu-bar-mode 1)
 (tool-bar-mode 0)
-(tabbar-mode t)
+;; (tabbar-mode t)
 
 (global-set-key (kbd "s-{") 'tabbar-backward-group)
 (global-set-key (kbd "s-}") 'tabbar-forward-group)
