@@ -54,15 +54,20 @@
 (global-set-key (kbd "<f7>") 'switch-to-minibuffer-window)
 
 (delete-selection-mode t)
+
+(setq visible-bell nil)
+
+;; startup fullscreen
+;; (custom-set-variables
+;;  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 ;; ---------------------------------------------------------------------------
 
 
 ;; ---------------------------------------------------------------------------
 ;; color-theme
 ;;
-;; (load-theme 'zenburn t)
 ;; (if window-system
-;;     (load-theme 'solarized-dark t))
+;;     (load-theme 'solarized-light t))
 (if window-system
     (load-theme 'zenburn t))
 ;; ---------------------------------------------------------------------------
@@ -81,7 +86,8 @@
 (if window-system
     (global-hl-line-mode nil))
 (menu-bar-mode 1)
-(tool-bar-mode 0)
+(setq tool-bar-mode -1)
+;; (toggle-tool-bar-mode-from-frame)
 ;; (tabbar-mode t)
 
 (global-set-key (kbd "s-{") 'tabbar-backward-group)
@@ -224,6 +230,7 @@
 ;;
 (remove-hook 'prog-mode-hook 'idle-highlight-mode)
 (remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
