@@ -28,7 +28,8 @@
   (setq include-dirs (append include-dirs sys-include-dirs))
   (mapc (lambda (dir)
           (semantic-add-system-include dir 'c++-mode)
-          (semantic-add-system-include dir 'c-mode))
+          (semantic-add-system-include dir 'c-mode)
+          (semantic-add-system-include dir 'objc-mode))
         include-dirs))
 
 (define-key semantic-mode-map (kbd "M-ESC") 'semantic-ia-complete-symbol)

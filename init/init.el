@@ -68,8 +68,13 @@
 ;;
 ;; (if window-system
 ;;     (load-theme 'solarized-light t))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+;; (if window-system
+;;     (load-theme 'zenburn t))
 (if window-system
-    (load-theme 'zenburn t))
+    (load-theme 'molokai t))
+(setq molokai-theme-kit t)
 ;; ---------------------------------------------------------------------------
 
 

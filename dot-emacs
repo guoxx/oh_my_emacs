@@ -11,6 +11,7 @@
                                "objc.el"
                                "lua.el"
                                "scheme.el"
+                               "dired.el"
 
                                "cedet.el"
                                "auto-cmpl.el"

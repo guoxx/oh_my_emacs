@@ -350,6 +350,7 @@ traceback location."
             "next" "pairs" "pcall" "print" "rawequal" "rawget" "rawlen" "rawset"
             "require" "select" "setfenv" "setmetatable" "tonumber" "tostring"
             "type" "unpack" "xpcall" "self"
+            "super" ;; hack by gxx
             ("bit32" . ("arshift" "band" "bnot" "bor" "btest" "bxor" "extract"
                         "lrotate" "lshift" "replace" "rrotate" "rshift"))
             ("coroutine" . ("create" "resume" "running" "status" "wrap" "yield"))
