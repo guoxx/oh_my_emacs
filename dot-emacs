@@ -3,6 +3,8 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+(setq userdata-dir "~/.emacs.d/userdata/")
+
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
                                "bootstrap.el"
