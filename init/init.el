@@ -70,11 +70,11 @@
 ;;     (load-theme 'solarized-light t))
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-;; (if window-system
-;;     (load-theme 'zenburn t))
 (if window-system
-    (load-theme 'molokai t))
-(setq molokai-theme-kit t)
+    (load-theme 'solarized-dark t))
+;; (if window-system
+;;     (load-theme 'molokai t))
+;; (setq molokai-theme-kit t)
 ;; ---------------------------------------------------------------------------
 
 
@@ -154,7 +154,7 @@
 ;;     (maximize-frame)))
 ;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
-(set-frame-parameter (selected-frame) 'alpha '(100 100))
+(set-frame-parameter (selected-frame) 'alpha '(92 92))
 ;; (add-to-list 'default-frame-alist '(alpha 90 90))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
@@ -163,7 +163,7 @@
        (cadr (frame-parameter nil 'alpha))
        100)
       (set-frame-parameter nil 'alpha '(100 100))
-    (set-frame-parameter nil 'alpha '(90 90))))
+    (set-frame-parameter nil 'alpha '(92 92))))
 (global-set-key (kbd "C-x t") 'toggle-transparency)
 ;; ---------------------------------------------------------------------------
 
@@ -243,3 +243,7 @@
 ;;
 (setq ls-lisp-use-insert-directory-program nil)
 (require 'ls-lisp)
+
+;; projectile mode
+(projectile-global-mode)
+(setq projectile-enable-caching t)
