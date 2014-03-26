@@ -13,7 +13,7 @@
 ;; show line number
 (global-visual-line-mode 1)
 (global-linum-mode t)
-(setq linum-format "%d|")  
+(setq linum-format "%d| ")
 
 ;; highlight current light
 (blink-cursor-mode t)
@@ -70,11 +70,11 @@
 ;;     (load-theme 'solarized-light t))
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-(if window-system
-    (load-theme 'solarized-dark t))
 ;; (if window-system
-;;     (load-theme 'molokai t))
-;; (setq molokai-theme-kit t)
+;;     (load-theme 'solarized-dark t))
+(if window-system
+    (load-theme 'molokai t))
+(setq molokai-theme-kit t)
 ;; ---------------------------------------------------------------------------
 
 
@@ -154,7 +154,7 @@
 ;;     (maximize-frame)))
 ;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
-(set-frame-parameter (selected-frame) 'alpha '(92 92))
+;; (set-frame-parameter (selected-frame) 'alpha '(92 92))
 ;; (add-to-list 'default-frame-alist '(alpha 90 90))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()

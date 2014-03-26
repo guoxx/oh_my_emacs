@@ -29,4 +29,9 @@
 ;; (put 'upcase-region 'disabled nil)
 ;; (put 'downcase-region 'disabled nil)
 
-(set-default-font "Source Code Pro-13")
+(set-default-font "Source Code Pro-14")
+
+ (mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'light :underline nil))
+  (face-list))

@@ -8,4 +8,6 @@
 
 (global-set-key (kbd "M-RET") 'toggle-max-frame)
 
+(global-set-key (kbd "M-s") 'save-buffer)
+
 (provide 'custom-key)
