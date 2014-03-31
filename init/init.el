@@ -13,7 +13,7 @@
 ;; show line number
 (global-visual-line-mode 1)
 (global-linum-mode t)
-(setq linum-format "%d| ")
+(setq linum-format "%d|")
 
 ;; highlight current light
 (blink-cursor-mode t)
@@ -56,6 +56,7 @@
 (delete-selection-mode t)
 
 (setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;; startup fullscreen
 ;; (custom-set-variables
@@ -72,6 +73,8 @@
 
 ;; (if window-system
 ;;     (load-theme 'solarized-dark t))
+;; (if window-system
+;;     (load-theme 'spacegray t))
 (if window-system
     (load-theme 'molokai t))
 (setq molokai-theme-kit t)
@@ -93,7 +96,7 @@
 (menu-bar-mode 1)
 (setq tool-bar-mode -1)
 ;; (toggle-tool-bar-mode-from-frame)
-;; (tabbar-mode t)
+(tabbar-mode t)
 
 (global-set-key (kbd "s-{") 'tabbar-backward-group)
 (global-set-key (kbd "s-}") 'tabbar-forward-group)
@@ -101,7 +104,7 @@
 (global-set-key (kbd "M-}") 'tabbar-forward-tab)
 
 (custom-set-variables
- '(tabbar-separator (quote (0.5)))
+ '(tabbar-separator (quote (2)))
  '(tabbar-use-images nil))
 
 (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
@@ -120,6 +123,9 @@
  "gray60"                               ;uforeground
  "gray15"                               ;ubackground
  )
+
+(set-face-attribute 'tabbar-default nil
+                    :height 1.0)
 ;; ---------------------------------------------------------------------------
 
 
