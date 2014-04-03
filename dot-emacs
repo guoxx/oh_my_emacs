@@ -31,7 +31,7 @@
 
 (set-default-font "Source Code Pro-14")
 
- (mapc
-  (lambda (face)
-    (set-face-attribute face nil :weight 'light :underline nil))
-  (face-list))
+(mapc
+ (lambda (face)
+   (set-face-attribute face nil :weight 'light :underline nil))
+ (face-list))
