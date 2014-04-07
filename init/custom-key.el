@@ -8,6 +8,9 @@
 
 (global-set-key (kbd "M-RET") 'toggle-max-frame)
 
-(global-set-key (kbd "M-s") 'save-buffer)
+;; (global-set-key (kbd "M-s") 'save-buffer)
+;; (global-set-key (kbd "M-x") 'kill-region)
+;; (global-set-key (kbd "M-c") 'kill-ring-save)
+;; (global-set-key (kbd "M-v") 'yank)
 
 (provide 'custom-key)

@@ -20,6 +20,7 @@ oh_my_emacs
 * direx
 * exec-path-from-shell
 * find-file-in-project
+* multiple-cursors
 
 ## Installation
 create directory userdata in root emacs config directory(for example .emacs.d/userdata), variable `userdata-dir` was defined in dot-emacs.

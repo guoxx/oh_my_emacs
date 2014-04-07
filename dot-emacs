@@ -8,6 +8,7 @@
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
                                "bootstrap.el"
+                               "os.el"
                                "bmk.el"
 
                                "objc.el"
@@ -26,8 +27,6 @@
 (mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
 
-;; (put 'upcase-region 'disabled nil)
-;; (put 'downcase-region 'disabled nil)
 
 (set-default-font "Source Code Pro-14")
 
@@ -35,3 +34,6 @@
  (lambda (face)
    (set-face-attribute face nil :weight 'light :underline nil))
  (face-list))
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
