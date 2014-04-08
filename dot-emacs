@@ -28,7 +28,8 @@
 ;; (mapc 'load (directory-files "~/.emacs.d/init" t "^[a-zA-Z0-9].*.el$"))
 
 
-(set-default-font "Source Code Pro-14")
+(setq default-frame-alist '((font . "Source Code Pro 14")))
+;; (set-default-font "Source Code Pro-14")
 
 (mapc
  (lambda (face)

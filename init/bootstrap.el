@@ -11,3 +11,5 @@
 (setq set-mark-command-repeat-pop 't)
 (setq mark-ring-max 32)
 (setq global-mark-ring-max 128)
+
+(global-auto-revert-mode t)
