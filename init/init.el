@@ -240,6 +240,7 @@
 ;; starter kit
 ;;
 (remove-hook 'prog-mode-hook 'idle-highlight-mode)
+(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 (remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; ---------------------------------------------------------------------------
