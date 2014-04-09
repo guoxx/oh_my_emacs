@@ -22,6 +22,7 @@ oh_my_emacs
 * yasnippet
 * yasnippet-bundle
 * window-jump
+* windresize
 
 ## Installation
 create directory userdata in root emacs config directory(for example .emacs.d/userdata), variable `userdata-dir` was defined in dot-emacs.
