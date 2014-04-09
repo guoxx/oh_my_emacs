@@ -160,7 +160,7 @@
 ;;     (maximize-frame)))
 ;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
 
-(set-frame-parameter (selected-frame) 'alpha '(100 100))
+(set-frame-parameter (selected-frame) 'alpha '(92 92))
 ;; (add-to-list 'default-frame-alist '(alpha 90 90))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()

@@ -23,6 +23,8 @@
                                "custom-key.el"
                                "init.el"
                                "mac.el"
+
+                               "prog.el"
                                ))
 
 (mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))
