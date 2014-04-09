@@ -170,8 +170,15 @@ element is itself expanded with `lua-rx-to-string'. "
                     (opt ws ":" ws lua-name)))
           (lua-funcheader
            ;; Outer (seq ...) is here to shy-group the definition
-           :rx (seq (or (seq (symbol "function") ws (group-n 1 lua-funcname))
-                        (seq (group-n 1 lua-funcname) ws "=" ws
+           :rx (seq (or (seq (or (symbol "function")
+                                 (seq (symbol "local") ws (symbol "function")))
+                             ws
+                             (group-n 1 lua-funcname))
+                        (seq (or (seq (symbol "local") ws (group-n 1 lua-funcname))
+                                 (group-n 1 lua-funcname))
+                             ws
+                             "="
+                             ws
                              (symbol "function")))))
           (lua-number
            :rx (seq (or (seq (+ digit) (opt ".") (* digit))
