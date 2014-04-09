@@ -1,8 +1,4 @@
-(defun kill-to-line-beginning ()
-  (interactive)
-  (kill-visual-line 0))
-(global-set-key (kbd "C-S-K") 'kill-to-line-beginning)
-
+(global-set-key (kbd "C-S-K") 'xx/kill-to-line-beginning)
 
 (global-set-key (kbd "C-s-<up>") 'ff-find-other-file)
 
@@ -18,5 +14,12 @@
 (global-set-key (kbd "C-x p r") 'projectile-replace)
 
 (global-set-key (kbd "M-;") 'xx/comment-dwim)
+
+(global-set-key (kbd "<left>") 'window-jump-left)
+(global-set-key (kbd "<right>") 'window-jump-right)
+(global-set-key (kbd "<up>") 'window-jump-up)
+(global-set-key (kbd "<down>") 'window-jump-down)
+
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
 (provide 'custom-key)

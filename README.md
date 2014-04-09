@@ -10,7 +10,6 @@ oh_my_emacs
 * markdown-mode
 
 ### utils
-* browse-kill-ring
 * undo-tree
 * starter-kit
 * helm
@@ -19,9 +18,10 @@ oh_my_emacs
 * frame-fns
 * direx
 * exec-path-from-shell
-* find-file-in-project
 * multiple-cursors
 * yasnippet
+* yasnippet-bundle
+* window-jump
 
 ## Installation
 create directory userdata in root emacs config directory(for example .emacs.d/userdata), variable `userdata-dir` was defined in dot-emacs.

@@ -1,3 +1,7 @@
+(defun xx/kill-to-line-beginning ()
+  (interactive)
+  (kill-visual-line 0))
+
 (defun xx/inc-num-region (p m)
    "Increments the numbers in a given region"
    (interactive "r")
