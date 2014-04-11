@@ -9,7 +9,8 @@
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 
-(global-set-key (kbd "C-x p t") 'projectile-find-file)
+;; (global-set-key (kbd "C-x p t") 'projectile-find-file)
+(global-set-key (kbd "s-t") 'projectile-find-file)
 (global-set-key (kbd "C-x p s") 'projectile-grep)
 (global-set-key (kbd "C-x p r") 'projectile-replace)
 
