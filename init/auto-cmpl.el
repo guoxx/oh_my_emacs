@@ -4,9 +4,9 @@
             (progn
               (add-to-list 'company-backends 'company-gtags))))
 
- (eval-after-load 'company
-   '(progn
-      (define-key company-mode-map (kbd "M-TAB") 'company-complete)))
+(eval-after-load 'company
+  '(progn
+     (define-key company-mode-map (kbd "M-TAB") 'company-complete)))
 
 (custom-set-faces
  '(company-preview
