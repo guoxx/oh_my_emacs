@@ -245,7 +245,7 @@
 (require 'ls-lisp)
 
 ;; projectile mode
-;; (projectile-global-mode)
+(projectile-global-mode)
 (setq projectile-enable-caching t)
 
 
