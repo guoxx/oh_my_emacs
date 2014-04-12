@@ -91,13 +91,13 @@
 (menu-bar-mode 1)
 (setq tool-bar-mode -1)
 
-(tabbar-mode t)
+(tabbar-mode 1)
 
 (eval-after-load 'tabbar
   '(progn
      (custom-set-variables
       '(tabbar-separator (quote (2)))
-      '(tabbar-use-images nil))l
+      '(tabbar-use-images nil))
 
      (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
        `(custom-set-faces
