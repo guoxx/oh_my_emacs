@@ -14,7 +14,7 @@
  '(company-preview-common
    ((t (:inherit company-preview))))
  '(company-tooltip
-   ((t (:background "lightgray" :foreground "black"))))
+   ((t (:background "#fcfeb3" :foreground "black"))))
  '(company-tooltip-selection
    ((t (:background "steelblue" :foreground "white"))))
  '(company-tooltip-common

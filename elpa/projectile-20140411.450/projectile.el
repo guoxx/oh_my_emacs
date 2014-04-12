@@ -5,7 +5,7 @@
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/projectile
 ;; Keywords: project, convenience
-;; Version: 20140410.743
+;; Version: 20140411.450
 ;; X-Original-Version: 0.10.0
 ;; Package-Requires: ((s "1.6.0") (dash "1.5.0") (pkg-info "0.4"))
 
@@ -520,13 +520,14 @@ Returns a project root directory path or nil if not found."
 (defun projectile-project-root ()
   "Retrieves the root directory of a project if available.
 The current directory is assumed to be the project's root otherwise."
-  (let ((dir (file-truename default-directory)))
-    (or (--reduce-from
-         (or acc (funcall it dir)) nil
-         projectile-project-root-files-functions)
-        (if projectile-require-project-root
-            (error "You're not in a project")
-          default-directory))))
+  (file-truename
+   (let ((dir (file-truename default-directory)))
+     (or (--reduce-from
+          (or acc (funcall it dir)) nil
+          projectile-project-root-files-functions)
+         (if projectile-require-project-root
+             (error "You're not in a project")
+           default-directory)))))
 
 (defun projectile-file-truename (file-name)
   "Return the truename of FILE-NAME.
