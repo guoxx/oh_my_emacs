@@ -86,48 +86,38 @@
 ;; ---------------------------------------------------------------------------
 ;; tabbar
 ;;
-;; (if window-system
-;;     ((lambda ()
-;;        (global-hl-line-mode nil)
-;;        (menu-bar-mode 1)
-;;        (tool-bar-mode 0)
-;;        (tabbar-mode t)
-;; 	   )))
 (if window-system
     (global-hl-line-mode nil))
 (menu-bar-mode 1)
 (setq tool-bar-mode -1)
-;; (toggle-tool-bar-mode-from-frame)
+
 (tabbar-mode t)
 
-(global-set-key (kbd "s-{") 'tabbar-backward-group)
-(global-set-key (kbd "s-}") 'tabbar-forward-group)
-(global-set-key (kbd "M-{") 'tabbar-backward-tab)
-(global-set-key (kbd "M-}") 'tabbar-forward-tab)
+(eval-after-load 'tabbar
+  '(progn
+     (custom-set-variables
+      '(tabbar-separator (quote (2)))
+      '(tabbar-use-images nil))l
 
-(custom-set-variables
- '(tabbar-separator (quote (2)))
- '(tabbar-use-images nil))
+     (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
+       `(custom-set-faces
+         '(tabbar-button ((t (:inherit tabbar-default))))
+         '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
+         '(tabbar-highlight ((t (:overline ,background))))
+         '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
+         '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
+       )
 
-(defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
-  `(custom-set-faces
-    '(tabbar-button ((t (:inherit tabbar-default))))
-    '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
-    '(tabbar-highlight ((t (:overline ,background))))
-    '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
-    '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
-  )
+     (tabbar-customize-faces-macro
+      "gray50"                               ;foreground
+      "gray15"                               ;background
+      "white"                                ;sforeground
+      "gray60"                               ;uforeground
+      "gray15"                               ;ubackground
+      )
 
-(tabbar-customize-faces-macro 
- "gray50"                               ;foreground
- "gray15"                               ;background
- "white"                                ;sforeground
- "gray60"                               ;uforeground
- "gray15"                               ;ubackground
- )
-
-(set-face-attribute 'tabbar-default nil
-                    :height 1.0)
+     (set-face-attribute 'tabbar-default nil :height 1.0)
+     ))
 ;; ---------------------------------------------------------------------------
 
 

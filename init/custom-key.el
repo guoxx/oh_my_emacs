@@ -27,4 +27,12 @@
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
+(eval-after-load 'tabbar
+  '(progn
+     (define-key tabbar-mode-map (kbd "s-{") 'tabbar-backward-group)
+     (define-key tabbar-mode-map (kbd "s-}") 'tabbar-forward-group)
+     (define-key tabbar-mode-map (kbd "M-{") 'tabbar-backward-tab)
+     (define-key tabbar-mode-map (kbd "M-}") 'tabbar-forward-tab)
+     ))
+
 (provide 'custom-key)
