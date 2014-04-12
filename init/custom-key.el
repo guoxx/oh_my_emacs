@@ -1,6 +1,7 @@
 (global-set-key (kbd "C-S-K") 'xx/kill-to-line-beginning)
 
-(define-key prog-mode-map (kbd "C-s-<up>") 'ff-find-other-file)
+(add-hook 'c-mode-common-hook '(lambda ()
+                                 (define-key c-mode-map (kbd "C-s-<up>") 'ff-find-other-file)))
 
 (global-set-key (kbd "M-RET") 'toggle-max-frame)
 
