@@ -20,8 +20,8 @@
                                "auto-cmpl.el"
 
                                "util.el"
-                               "custom-key.el"
                                "init.el"
+                               "custom-key.el"
                                "mac.el"
 
                                "prog.el"

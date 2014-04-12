@@ -73,8 +73,6 @@
 
 ;; (if window-system
 ;;     (load-theme 'solarized-dark t))
-;; (if window-system
-;;     (load-theme 'spacegray t))
 (if window-system
     (progn
       (setq molokai-theme-kit t)
@@ -132,21 +130,9 @@
 
 
 ;; ---------------------------------------------------------------------------
-;;	maxframe
+;; transparency
 ;;
-;; (require 'maxframe)
-;; (add-hook 'window-setup-hook 'maximize-frame t)
-;; (defvar maxFrame-p nil "Check if fullscreen is on or off")
-;; (defun maxOrMin-frame ()
-;;   (interactive)
-;;   (setq maxFrame-p (not maxFrame-p))
-;;   (if maxFrame-p
-;;       (restore-frame)
-;;     (maximize-frame)))
-;; (global-set-key (kbd "s-M") 'maxOrMin-frame)
-
 (set-frame-parameter (selected-frame) 'alpha '(92 92))
-;; (add-to-list 'default-frame-alist '(alpha 90 90))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
   (interactive)
@@ -173,7 +159,7 @@
 (eval-after-load "shell"
   '(define-key shell-mode-map (kbd "C-l") 'clear-shell))
 
-(when (memq window-system '(mac ns))
+(when (eq (target-os) target-os-mac)
   (exec-path-from-shell-initialize))
 ;; ---------------------------------------------------------------------------
 
@@ -199,7 +185,6 @@
 ;; others
 ;;
 (add-to-list 'load-path "~/.emacs.d/packages/")
-;; (require 'powerline)
 
 
 (show-paren-mode t)
@@ -216,9 +201,7 @@
 (require 'helm)
 (require 'helm-utils)
 (require 'helm-config)
-;; (helm-mode 0)
-(global-set-key (kbd "C-c h") 'helm-imenu)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(helm-mode 1)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
@@ -251,3 +234,7 @@
 (yas/global-mode)
 (setq yas/root-directory "~/.emacs.d/snippets")
 (yas/load-directory yas/root-directory)
+
+
+;; (desktop-save-mode 1)
+;; (setq desktop-path '("~/.emacs.d/userdata/"))

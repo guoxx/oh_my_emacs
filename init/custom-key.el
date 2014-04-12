@@ -26,6 +26,8 @@
 (global-set-key (kbd "<down>") 'window-jump-down)
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-c h") 'helm-imenu)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (eval-after-load 'tabbar
   '(progn
