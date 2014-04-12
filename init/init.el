@@ -236,5 +236,5 @@
 (yas/load-directory yas/root-directory)
 
 
-;; (desktop-save-mode 1)
-;; (setq desktop-path '("~/.emacs.d/userdata/"))
+(desktop-save-mode 1)
+(setq desktop-path '("~/.emacs.d/userdata/"))
