@@ -13,7 +13,7 @@
 ;; show line number
 (global-visual-line-mode 1)
 (global-linum-mode t)
-(setq linum-format "%d|")
+;; (setq linum-format "%d|")
 
 ;; highlight current light
 (blink-cursor-mode t)
@@ -76,8 +76,10 @@
 ;; (if window-system
 ;;     (load-theme 'spacegray t))
 (if window-system
-    (load-theme 'molokai t))
-(setq molokai-theme-kit t)
+    (progn
+      (setq molokai-theme-kit t)
+      (load-theme 'molokai t)
+      (powerline-default-theme)))
 ;; ---------------------------------------------------------------------------
 
 
