@@ -32,6 +32,10 @@
 
 
 (setq default-frame-alist '((font . "Source Code Pro-14:light")))
+(add-to-list 'default-frame-alist '(top . 0))
+(add-to-list 'default-frame-alist '(left . 0))
+(add-to-list 'default-frame-alist '(height . 80))
+(add-to-list 'default-frame-alist '(width . 120))
 ;; (set-default-font "Source Code Pro-14")
 
 ;; (mapc
