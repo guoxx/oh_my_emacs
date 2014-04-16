@@ -2,7 +2,10 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (progn
-              (add-to-list 'company-backends 'company-gtags))))
+              (add-to-list 'company-backends 'company-gtags)
+              (add-to-list 'company-backends 'company-clang)
+              ;; (add-to-list 'company-backends 'company-xcode)
+              )))
 
 (eval-after-load 'company
   '(progn
