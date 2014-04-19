@@ -1,5 +1,5 @@
 (add-hook 'c-mode-common-hook '(lambda ()
-                                 (c-set-style "BSD")))
+                                 (c-set-style "linux")))
 
 (add-hook 'prog-mode-hook '(lambda ()
                              (interactive)
