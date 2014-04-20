@@ -15,6 +15,7 @@
                                "lua.el"
                                "scheme.el"
                                "dired.el"
+                               "ibuffer.el"
 
                                "cedet.el"
                                "auto-cmpl.el"
