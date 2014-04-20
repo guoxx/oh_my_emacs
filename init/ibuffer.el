@@ -5,6 +5,14 @@
                ("c/c++" (or
                          (mode . c-mode)
                          (mode . cc-mode)))
+               ("prog" ;; non C++ related stuff.
+                (or
+                 (mode . python-mode)
+                 (mode . emacs-lisp-mode)
+                 (mode . shell-script-mode)
+                 (mode . scheme-mode)
+                 ;; etc
+                 ))
                ("notes" (or
                          (mode . org-mode)))
                ("elisp" (or
@@ -21,4 +29,6 @@
           (lambda ()
             (progn
               (ibuffer-switch-to-saved-filter-groups "default"))))
+
+(setq ibuffer-show-empty-filter-groups nil)
 
