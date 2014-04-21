@@ -1367,16 +1367,35 @@ and relative each, and the shift/column to indent to."
   "Accumulates the indentation information previously calculated by
 lua-calculate-indentation-info. Returns either the relative indentation
 shift, or the absolute column to indent to."
-  (let ((info-list (reverse info))
+  (let (
+        ;; (info-list (reverse info))
+        (absolute-list (remove-if-not (lambda (x) (eq 'absolute (car x))) info))
+        (relative-list (remove-if-not (lambda (x) (eq 'relative (car x))) info))
         (type 'relative)
-        (accu 0))
-    (mapc (lambda (x)
-            (setq accu (if (eq 'absolute (car x))
-                           (progn (setq type 'absolute)
-                                  (cdr x))
-                         (+ accu (cdr x)))))
-          info-list)
+        (accu 0)
+        (abs 0)
+        (rel 0))
+    ;; (mapc (lambda (x)
+    ;;         (setq accu (if (eq 'absolute (car x))
+    ;;                        (progn
+    ;;                          (setq type 'absolute)
+    ;;                          (if inited
+    ;;                              accu
+    ;;                            (progn
+    ;;                              (setq inited t)
+    ;;                              (cdr x))))
+    ;;                      (+ accu (cdr x)))))
+    ;;       info-list
+    (progn
+      (setq abs (if (eq (last absolute-list) nil) 0 (cdar (last absolute-list))))
+      (setq rel (if (eq (first relative-list) nil) 0 (cdr (first relative-list))))
+      (if (not (eq (last absolute-list) nil))
+          (setq type 'absolute))
+      (setq accu
+            (+ abs rel)))
+
     (cons type accu)))
+
 
 (defun lua-calculate-indentation-block-modifier (&optional parse-end)
   "Return amount by which this line modifies the indentation.
