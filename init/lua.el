@@ -5,3 +5,8 @@
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 (setq lua-indent-level 4)
+
+(add-hook 'lua-mode-hook '(lambda ()
+                            (progn
+                              (setq tab-always-indent t)
+                              )))

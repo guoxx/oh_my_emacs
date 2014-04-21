@@ -8,7 +8,6 @@
                ("prog" ;; non C++ related stuff.
                 (or
                  (mode . python-mode)
-                 (mode . emacs-lisp-mode)
                  (mode . shell-script-mode)
                  (mode . scheme-mode)
                  ;; etc
