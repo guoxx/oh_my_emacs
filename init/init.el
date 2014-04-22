@@ -110,7 +110,7 @@
       "gray15"                               ;ubackground
       )
 
-     (set-face-attribute 'tabbar-default nil :height 1.0)
+     (set-face-attribute 'tabbar-default nil :font "Source Code Pro:bold" :underline t :width 'extra-condensed :height 1.0)
      ))
 ;; ---------------------------------------------------------------------------
 
