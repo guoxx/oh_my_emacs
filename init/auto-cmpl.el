@@ -11,7 +11,7 @@
   '(progn
      (define-key company-mode-map (kbd "M-TAB") 'company-complete)))
 
-(setq company-idle-delay 0.1)
+(setq company-idle-delay 0.2)
 
 (custom-set-faces
  '(company-preview

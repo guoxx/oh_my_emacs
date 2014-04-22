@@ -222,7 +222,7 @@
 ;; (setq projectile-project-root-files-functions '(projectile-root-top-down
 ;;                                                 projectile-root-top-down-recurring
 ;;                                                 projectile-root-bottom-up))
-;; (setq projectile-indexing-method 'native)
+(setq projectile-git-command "git-ls-all-files")
 
 
 (require 'multiple-cursors)
