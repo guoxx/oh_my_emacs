@@ -11,6 +11,8 @@
   '(progn
      (define-key company-mode-map (kbd "M-TAB") 'company-complete)))
 
+(setq company-idle-delay 0.1)
+
 (custom-set-faces
  '(company-preview
    ((t (:foreground "darkgray" :underline t))))

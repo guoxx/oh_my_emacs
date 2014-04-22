@@ -217,7 +217,12 @@
 
 ;; projectile mode
 (projectile-global-mode)
-(setq projectile-enable-caching t)
+;; (setq projectile-enable-caching t)
+(setq projectile-switch-project-action 'projectile-dired)
+;; (setq projectile-project-root-files-functions '(projectile-root-top-down
+;;                                                 projectile-root-top-down-recurring
+;;                                                 projectile-root-bottom-up))
+;; (setq projectile-indexing-method 'native)
 
 
 (require 'multiple-cursors)
