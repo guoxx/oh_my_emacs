@@ -93,13 +93,15 @@
       '(tabbar-separator (quote (2)))
       '(tabbar-use-images nil))
 
-     (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground)
+     (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground mforeground)
        `(custom-set-faces
          '(tabbar-button ((t (:inherit tabbar-default))))
          '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
          '(tabbar-highlight ((t (:overline ,background))))
          '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
-         '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground)))))
+         '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground))))
+         '(tabbar-modified ((t :inherit tabbar-default :foreground ,mforeground)))
+         )
        )
 
      (tabbar-customize-faces-macro
@@ -108,6 +110,7 @@
       "white"                                ;sforeground
       "gray60"                               ;uforeground
       "gray15"                               ;ubackground
+      "red"                                ;mforeground
       )
 
      (set-face-attribute 'tabbar-default nil :font "Source Code Pro:bold" :underline t :width 'extra-condensed :height 1.0)
