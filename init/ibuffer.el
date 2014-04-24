@@ -13,6 +13,7 @@
                  ;; etc
                  ))
                ("notes" (or
+                         (mode . markdown-mode)
                          (mode . org-mode)))
                ("elisp" (or
                          (mode . emacs-lisp-mode)))
