@@ -98,7 +98,7 @@
          '(tabbar-button ((t (:inherit tabbar-default))))
          '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background ,background :foreground ,foreground :height 2))))
          '(tabbar-highlight ((t (:overline ,background))))
-         '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground ,sforeground))))
+         '(tabbar-selected ((t (:inherit tabbar-default :background ,ubackground :foreground ,sforeground))))
          '(tabbar-unselected ((t (:inherit tabbar-default :background ,ubackground :foreground ,uforeground))))
          '(tabbar-modified ((t :inherit tabbar-default :foreground ,mforeground)))
          )
@@ -113,7 +113,7 @@
       "red"                                ;mforeground
       )
 
-     (set-face-attribute 'tabbar-default nil :font "Source Code Pro:bold" :underline t :width 'extra-condensed :height 1.0)
+     (set-face-attribute 'tabbar-default nil :font "Source Code Pro" :underline t :width 'extra-condensed :height 1.0)
      ))
 ;; ---------------------------------------------------------------------------
 

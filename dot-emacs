@@ -33,7 +33,15 @@
 
 ;; startup fullscreen
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(safe-local-variable-values (quote ((checkdoc-minor-mode . t) (require-final-newline . t) (mangle-whitespace . t) (whitespace-line-column . 80) (lexical-binding . t))))
+ '(scheme-program-name "racket")
+ '(tabbar-separator (quote (2)))
+ '(tabbar-use-images nil))
 (setq default-frame-alist '((font . "Source Code Pro-14:light")))
 
 ;; (mapc
@@ -43,3 +51,31 @@
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(company-preview ((t (:foreground "darkgray" :underline t))))
+;;  '(company-preview-common ((t (:inherit company-preview))))
+;;  '(company-scrollbar-bg ((t (:background "darkgray"))))
+;;  '(company-scrollbar-fg ((t (:background "black"))))
+;;  '(company-tooltip ((t (:background "#fcfeb3" :foreground "black"))))
+;;  '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
+;;  '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
+;;  '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
+;;  '(diff-added ((((background dark)) (:foreground "#FFFF9B9BFFFF")) (t (:foreground "DarkGreen"))) t)
+;;  '(diff-changed ((((background dark)) (:foreground "Yellow")) (t (:foreground "MediumBlue"))) t)
+;;  '(diff-context ((((background dark)) (:foreground "White")) (t (:foreground "Black"))) t)
+;;  '(diff-file-header ((((background dark)) (:foreground "Cyan" :background "Black")) (t (:foreground "Red" :background "White"))) t)
+;;  '(diff-header ((((background dark)) (:foreground "Cyan")) (t (:foreground "Red"))) t)
+;;  '(diff-hunk-header ((((background dark)) (:foreground "Black" :background "#05057F7F8D8D")) (t (:foreground "White" :background "Salmon"))) t)
+;;  '(diff-index ((((background dark)) (:foreground "Magenta")) (t (:foreground "Green"))) t)
+;;  '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) (t (:foreground "DarkBlue"))) t)
+;;  '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474")) (t (:foreground "DarkMagenta"))) t)
+;;  '(tabbar-button ((t (:inherit tabbar-default))))
+;;  '(tabbar-default ((((class color grayscale) (background dark)) (:inherit variable-pitch :background "gray15" :foreground "gray50" :height 2))))
+;;  '(tabbar-highlight ((t (:overline "gray15"))))
+;;  '(tabbar-modified ((t :inherit tabbar-default :foreground "red")))
+;;  '(tabbar-selected ((t (:inherit tabbar-default :background "background-color-at-point" :foreground "white"))))
+;;  '(tabbar-unselected ((t (:inherit tabbar-default :background "gray15" :foreground "gray60")))))
