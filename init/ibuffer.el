@@ -20,7 +20,7 @@
                ("emacs" (or
                          (name . "^\\*scratch\\*$")
                          (name . "^\\*Messages\\*$")))
-               ("helm & ido" (or
+               ("misc" (or
                               (name . "^\\*helm")
                               (name . "^\\*ido")))
                ))))
