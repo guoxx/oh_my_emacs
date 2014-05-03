@@ -81,11 +81,11 @@
 ;; tabbar
 ;;
 (if window-system
-    (global-hl-line-mode nil))
-(menu-bar-mode 1)
-(setq tool-bar-mode -1)
-
-(tabbar-mode 1)
+    (progn
+      (global-hl-line-mode nil)
+      (menu-bar-mode 1)
+      (setq tool-bar-mode -1)
+      (tabbar-mode 1)))
 
 (eval-after-load 'tabbar
   '(progn
