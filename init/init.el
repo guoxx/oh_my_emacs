@@ -85,12 +85,13 @@
       (global-hl-line-mode nil)
       (menu-bar-mode 1)
       (setq tool-bar-mode -1)
-      (tabbar-mode 1)))
+      ;; (tabbar-mode 1)
+      ))
 
 (eval-after-load 'tabbar
   '(progn
      (custom-set-variables
-      '(tabbar-separator (quote (2)))
+      '(tabbar-separator (quote (1)))
       '(tabbar-use-images nil))
 
      (defmacro tabbar-customize-faces-macro (foreground background sforeground uforeground ubackground mforeground)
