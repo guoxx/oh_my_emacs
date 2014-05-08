@@ -9,6 +9,7 @@
                 (or
                  (mode . python-mode)
                  (mode . shell-script-mode)
+                 (mode . sh-mode)
                  (mode . scheme-mode)
                  ;; etc
                  ))
