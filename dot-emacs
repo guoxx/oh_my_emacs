@@ -15,8 +15,11 @@
                                "lua.el"
                                "scheme.el"
                                "yin.el"
+                               "prog.el"
+
                                "dired.el"
                                "ibuffer.el"
+                               "project.el"
 
                                "cedet.el"
                                "auto-cmpl.el"
@@ -25,8 +28,6 @@
                                "init.el"
                                "custom-key.el"
                                "mac.el"
-
-                               "prog.el"
                                ))
 
 (mapc 'load (mapcar (lambda (filename) (concat oh-my-emacs-init-dir filename)) oh-my-emacs-init-files))

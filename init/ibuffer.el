@@ -11,6 +11,7 @@
                  (mode . shell-script-mode)
                  (mode . sh-mode)
                  (mode . scheme-mode)
+                 (mode . yin-mode)
                  ;; etc
                  ))
                ("notes" (or

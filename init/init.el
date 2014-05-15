@@ -219,20 +219,6 @@
 (setq ls-lisp-use-insert-directory-program nil)
 (require 'ls-lisp)
 
-;; projectile mode
-(projectile-global-mode)
-;; (setq projectile-enable-caching t)
-(setq projectile-switch-project-action 'projectile-dired)
-;; (setq projectile-project-root-files-functions '(projectile-root-top-down
-;;                                                 projectile-root-top-down-recurring
-;;                                                 projectile-root-bottom-up))
-(setq projectile-git-command "git-ls-all-files")
-;; replace method in projectile
-(defun projectile-files-via-ext-command (command)
-  "Get a list of relative file names in the project root by executing COMMAND."
-  (split-string (shell-command-to-string command) "[\0\n]+" t))
-
-
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
