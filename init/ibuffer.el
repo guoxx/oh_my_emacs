@@ -12,6 +12,7 @@
                  (mode . sh-mode)
                  (mode . scheme-mode)
                  (mode . yin-mode)
+                 (mode . makefile-mode)
                  ;; etc
                  ))
                ("notes" (or
