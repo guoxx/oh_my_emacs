@@ -4,7 +4,8 @@
                ("lua" (mode . lua-mode))
                ("c/c++" (or
                          (mode . c-mode)
-                         (mode . cc-mode)))
+                         (mode . cc-mode)
+                         (mode . c++-mode)))
                ("prog" ;; non C++ related stuff.
                 (or
                  (mode . python-mode)

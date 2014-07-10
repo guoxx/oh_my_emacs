@@ -41,10 +41,5 @@
       (setq default-frame-alist '((font . "Source Code Pro-14:light")))
       (set-fontset-font "fontset-default" 'gb18030' ("STHeiti" . "unicode-bmp"))))
 
-;; (mapc
-;;  (lambda (face)
-;;    (set-face-attribute face nil :weight 'light :underline nil))
-;;  (face-list))
-
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

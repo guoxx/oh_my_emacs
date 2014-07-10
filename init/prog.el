@@ -1,5 +1,7 @@
 (add-hook 'c-mode-common-hook '(lambda ()
-                                 (c-set-style "linux")))
+                                 (progn
+                                   (c-set-style "linux")
+                                   (setq c-basic-offset 4))))
 
 (add-hook 'prog-mode-hook '(lambda ()
                              (interactive)

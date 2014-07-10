@@ -1,8 +1,9 @@
 (global-set-key (kbd "C-S-K") 'xx/kill-to-line-beginning)
 
+;; TODO: c++ mode
 (add-hook 'c-mode-common-hook '(lambda ()
                                  (define-key c-mode-map (kbd "C-s-<up>") 'ff-find-other-file)))
-0
+
 (global-set-key (kbd "M-RET") 'toggle-max-frame)
 
 (global-set-key (kbd "s-s") 'save-buffer)
