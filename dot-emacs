@@ -36,8 +36,8 @@
 (if (window-system)
     (progn
       ;; startup fullscreen
-      (custom-set-variables
-       '(initial-frame-alist (quote ((fullscreen . maximized)))))
+      ;; (custom-set-variables
+      ;;  '(initial-frame-alist (quote ((fullscreen . maximized)))))
       (setq default-frame-alist '((font . "Source Code Pro-14:light")))
       (set-fontset-font "fontset-default" 'gb18030' ("STHeiti" . "unicode-bmp"))))
 
