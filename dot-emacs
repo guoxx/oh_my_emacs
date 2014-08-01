@@ -4,6 +4,7 @@
 (package-initialize)
 
 (setq userdata-dir "~/.emacs.d/userdata/")
+(setq resources-dir "~/.emacs.d/resources/")
 
 (setq oh-my-emacs-init-dir "~/.emacs.d/init/")
 (setq oh-my-emacs-init-files '(
@@ -16,6 +17,7 @@
                                "scheme.el"
                                "yin.el"
                                "prog.el"
+                               "markdown.el"
 
                                "dired.el"
                                "ibuffer.el"
