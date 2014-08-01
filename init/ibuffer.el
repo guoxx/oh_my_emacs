@@ -14,6 +14,7 @@
                  (mode . scheme-mode)
                  (mode . yin-mode)
                  (mode . makefile-mode)
+                 (mode . java-mode)
                  ;; etc
                  ))
                ("notes" (or

@@ -132,7 +132,7 @@
 ;; ---------------------------------------------------------------------------
 ;; transparency
 ;;
-(set-frame-parameter (selected-frame) 'alpha '(92 92))
+(set-frame-parameter (selected-frame) 'alpha '(100 100))
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
   (interactive)
