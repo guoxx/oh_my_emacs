@@ -73,7 +73,8 @@
     (progn
       (setq molokai-theme-kit t)
       (load-theme 'molokai t)
-      (powerline-default-theme)))
+      (powerline-default-theme))
+  (setq linum-format " %4d "))
 ;; ---------------------------------------------------------------------------
 
 
