@@ -73,7 +73,8 @@
     (progn
       (setq molokai-theme-kit t)
       (load-theme 'molokai t)
-      (powerline-default-theme))
+      ;; (powerline-default-theme)
+      )
   (setq linum-format " %4d "))
 ;; ---------------------------------------------------------------------------
 
@@ -199,19 +200,19 @@
 ;; ---------------------------------------------------------------------------
 ;; helm
 ;;
-(require 'helm)
-(require 'helm-utils)
+;; (require 'helm)
+;; (require 'helm-utils)
 (require 'helm-config)
-(helm-mode 1)
+;; (helm-mode 1)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
 ;; starter kit
 ;;
-(remove-hook 'prog-mode-hook 'idle-highlight-mode)
-(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
-(remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+;; (remove-hook 'prog-mode-hook 'idle-highlight-mode)
+;; (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;; (remove-hook 'prog-mode-hook 'esk-pretty-lambdas)
+;; (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 ;; ---------------------------------------------------------------------------
 
 ;; ---------------------------------------------------------------------------
@@ -227,9 +228,9 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
-(yas/global-mode)
-(setq yas/root-directory "~/.emacs.d/snippets")
-(yas/load-directory yas/root-directory)
+;; (yas/global-mode)
+;; (setq yas/root-directory "~/.emacs.d/snippets")
+;; (yas/load-directory yas/root-directory)
 
 
 (desktop-save-mode 1)
