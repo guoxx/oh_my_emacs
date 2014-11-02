@@ -12,3 +12,13 @@
   (split-string (shell-command-to-string command) "[\0\n]+" t))
 
 (setq projectile-globally-ignored-files (append '("GRTAGS" "GTAGS" "GPATH") projectile-globally-ignored-files))
+
+(eval-after-load 'projectile
+  '(progn
+     (define-key projectile-mode-map (kbd "C-c p t") 'projectile-find-file)
+     (define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep)
+     (define-key projectile-mode-map (kbd "C-c p r") 'projectile-replace)
+
+     ;; (define-key projectile-mode-map (kbd "s-t") 'projectile-find-file)
+     ;; (define-key projectile-mode-map (kbd "s-F") 'projectile-grep)
+     ))

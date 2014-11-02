@@ -11,16 +11,6 @@
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 
-(eval-after-load 'projectile
-  '(progn
-     (define-key projectile-mode-map (kbd "C-x p t") 'projectile-find-file)
-     (define-key projectile-mode-map (kbd "C-x p s") 'projectile-grep)
-     (define-key projectile-mode-map (kbd "C-x p r") 'projectile-replace)
-
-     (define-key projectile-mode-map (kbd "s-t") 'projectile-find-file)
-     (define-key projectile-mode-map (kbd "s-F") 'projectile-grep)
-     ))
-
 (global-set-key (kbd "M-;") 'xx/comment-dwim)
 
 (global-set-key (kbd "<left>") 'window-jump-left)
