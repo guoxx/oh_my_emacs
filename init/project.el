@@ -15,9 +15,9 @@
 
 (eval-after-load 'projectile
   '(progn
-     (define-key projectile-mode-map (kbd "C-c p t") 'projectile-find-file)
-     (define-key projectile-mode-map (kbd "C-c p s") 'projectile-grep)
-     (define-key projectile-mode-map (kbd "C-c p r") 'projectile-replace)
+     (define-key projectile-mode-map (kbd "C-x p t") 'projectile-find-file)
+     (define-key projectile-mode-map (kbd "C-x p s") 'projectile-grep)
+     (define-key projectile-mode-map (kbd "C-x p r") 'projectile-replace)
 
      ;; (define-key projectile-mode-map (kbd "s-t") 'projectile-find-file)
      ;; (define-key projectile-mode-map (kbd "s-F") 'projectile-grep)
