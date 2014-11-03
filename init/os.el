@@ -7,5 +7,5 @@
   (cond
    ((string-equal system-type "darwin") target-os-mac)
    ((string-equal system-type "gnu/linux") target-os-linux)
-   ((string-equal system-type "windows-nt") target-os-linux)
+   ((string-equal system-type "windows-nt") target-os-win32)
    (t target-os-unknown)))
