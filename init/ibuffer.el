@@ -15,11 +15,13 @@
                  (mode . yin-mode)
                  (mode . makefile-mode)
                  (mode . java-mode)
+                 (mode . ruby-mode)
                  ;; etc
                  ))
                ("notes" (or
                          (mode . markdown-mode)
-                         (mode . org-mode)))
+                         (mode . org-mode)
+                         (mode . text-mode)))
                ("elisp" (or
                          (mode . emacs-lisp-mode)))
                ("emacs" (or

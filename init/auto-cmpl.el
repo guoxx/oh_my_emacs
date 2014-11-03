@@ -9,7 +9,7 @@
 
 (eval-after-load 'company
   '(progn
-     (define-key company-mode-map (kbd "M-TAB") 'company-complete)))
+     (define-key company-mode-map (kbd "M-/") 'company-complete)))
 
 (setq company-idle-delay 0.5)
 
