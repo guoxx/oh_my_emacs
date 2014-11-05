@@ -241,3 +241,7 @@
           (lambda ()
             (define-key ibuffer-mode-map "\C-x\C-f"
               'ido-find-file)))
+
+
+(add-hook 'text-mode-hook '(lambda ()
+                             (setq show-trailing-whitespace 1)))
