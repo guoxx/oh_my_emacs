@@ -21,7 +21,9 @@
                ("notes" (or
                          (mode . markdown-mode)
                          (mode . org-mode)
-                         (mode . text-mode)))
+                         (mode . text-mode)
+                         (mode . rst-moce)
+                         ))
                ("elisp" (or
                          (mode . emacs-lisp-mode)))
                ("emacs" (or
